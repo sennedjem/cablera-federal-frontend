@@ -4,14 +4,15 @@ import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
+
     constructor(private router: Router) {}
 
     canActivate() {
-        if (localStorage.getItem('isLoggedin')) {
-            return true;
-        }
+        var isLogged = localStorage.getItem('token') != null;
 
-        this.router.navigate(['/login']);
-        return false;
+        if (!isLogged)
+            this.router.navigate(['/login']);
+        
+        return isLogged;
     }
 }
