@@ -6,14 +6,14 @@
             <form role="form">
                 <div class="form-content">
                     <div class="form-group">
-                        <input type="text" ng-model="name" class="form-control input-underline input-lg" id="email" placeholder="Email">
+                        <input type="text" ng-model="user.name" class="form-control input-underline input-lg" id="email" placeholder="Email">
                     </div>
 
                     <div class="form-group">
-                        <input type="password" class="form-control input-underline input-lg" id="password" placeholder="Password">
+                        <input type="password" ng-model="user.password" class="form-control input-underline input-lg" id="password" placeholder="Password">
                     </div>
                 </div>
-                <a class="btn rounded-btn" [routerLink]="['/dashboard']" (click)="onLoggedin()" translate="login.login">Log in</a>
+                <a class="btn rounded-btn" (click)="onLoggedin()" translate="login.login">Log in</a> <!--  [routerLink]="['/dashboard']" -->
                 &nbsp;
                 <a class="btn rounded-btn" [routerLink]="['/signup']" translate="login.register">Sign up</a>
             </form>
