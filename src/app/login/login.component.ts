@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { routerTransition } from '../router.animations';
 import { AuthService } from '../shared/services/auth/auth.service';
+import { User } from '../shared/models';
+import { NgForm } from '@angular/forms';
 
 @Component({
     selector: 'app-login',
@@ -11,22 +13,16 @@ import { AuthService } from '../shared/services/auth/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-    user: {};
-    name: "";
-    password: "";
+    user: User = new User();
+    gato = "";
 
-    constructor(public router: Router, public auth: AuthService) {
-        this.user = {name:"seba",password:"12345"}
-        this.name = ""
-        this.password = ""
-    }
+    constructor(public router: Router, public auth: AuthService) {}
 
     ngOnInit() {}
 
-    onLoggedin() {
-        console.log(this.user)
-        console.log(this.name)
-        console.log(this.password)
+    onLoggedin(form: NgForm) {
+        console.log(this.user);
+        //return;
         
         this.auth.handleAuthentication(this.user).subscribe(
             data => localStorage.setItem('token', data.token),
