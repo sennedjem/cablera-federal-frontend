@@ -10,7 +10,7 @@
                                class="form-control input-underline input-lg" 
                                id="name" name="name" 
                                placeholder="Name"
-                               (blur)="failLogin = false"
+                               (focus)="failLogin = false"
                                [(ngModel)]="user.name">
                     </div>
 
@@ -19,7 +19,7 @@
                                class="form-control input-underline input-lg"
                                id="password" name="password" 
                                placeholder="Password"
-                               (blur)="failLogin = false"
+                               (focus)="failLogin = false"
                                [(ngModel)]="user.password">
                     </div>
                 </div>

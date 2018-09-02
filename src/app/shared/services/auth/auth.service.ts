@@ -17,4 +17,9 @@ export class AuthService{
     return this.http
       .post<any>(`${PATHBACKEND}/login`, user);
   }
+
+  public signUp(user): Observable<any> {
+    return this.http
+      .post<any>(`${PATHBACKEND}/signup`, user);
+  }
 }

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SignupComponent } from './signup.component';
+import { FormsModule }   from '@angular/forms';
 
 const routes: Routes = [
     {
@@ -9,8 +10,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule]
+    imports: [
+        RouterModule.forChild(routes)
+    ],
+    exports: [
+        RouterModule,
+        FormsModule
+    ]
 })
-export class SignupRoutingModule {
-}
+export class SignupRoutingModule {}
