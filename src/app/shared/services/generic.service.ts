@@ -2,6 +2,8 @@ import { Optional,Injectable,Inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 
+import { PATHBACKEND } from '../../../environments/environment';
+
 @Injectable()
 /*@Component({
   providers: [
@@ -13,12 +15,13 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 export class GenericService<T> {
 
   headers: HttpHeaders;
+  url: string;
 
   constructor(
     protected http: HttpClient,
-    @Inject('url') @Optional() protected url?: string,
-    @Inject('endpoint') @Optional() protected endpoint?: string
+    protected endpoint: string
   ) {
+    this.url = PATHBACKEND;
     this.headers = new HttpHeaders();
     this.headers.append('Content-Type', 'application/json');
   }

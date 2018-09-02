@@ -14,19 +14,26 @@ import { NgForm } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
     user: User = new User();
-    gato = "";
+    failLogin: boolean = false;
 
     constructor(public router: Router, public auth: AuthService) {}
 
     ngOnInit() {}
 
     onLoggedin(form: NgForm) {
-        console.log(this.user);
-        //return;
-        
         this.auth.handleAuthentication(this.user).subscribe(
-            data => localStorage.setItem('token', data.token),
-            error => console.log(error)
+            data => this.setTokenAndNavigate(data.token),
+            error => this.setFailLogin(error)
         );
+    }
+
+    setTokenAndNavigate(token:string) {
+        localStorage.setItem('token', token);
+        this.router.navigate(['/dashboard']);
+    }
+
+    setFailLogin(error){
+        this.failLogin = true;
+        console.log(error);
     }
 }

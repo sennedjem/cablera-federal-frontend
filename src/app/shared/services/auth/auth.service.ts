@@ -15,6 +15,6 @@ export class AuthService{
 
   public handleAuthentication(user): Observable<any> {
     return this.http
-      .post<any>(`${PATHBACKEND}/api/login`, user);
+      .post<any>(`${PATHBACKEND}/login`, user);
   }
 }

@@ -7,39 +7,30 @@ import { Input, Component, OnInit } from '@angular/core';
 })
 export class PopupComponent implements OnInit {
 
+  //Disponible alerts = success, info, warning, danger
   @Input()
-  public alerts: Array<IAlert> = [];
+  public type: string;
+  @Input()
+  public message: string;
 
-  private backup: Array<IAlert>;
+  private alert: IAlert;
 
   constructor() { 
-    this.alerts.push({
-      id: 1,
-      type: 'success',
-      message: 'This is an success alert',
-    }, {
-      id: 2,
-      type: 'info',
-      message: 'This is an info alert',
-    });
-    this.backup = this.alerts.map((alert: IAlert) => Object.assign({}, alert));
+    this.alert = {
+      type: this.type,
+      message: this.message,
+    }
   }
 
   ngOnInit() {
   }
 
   public closeAlert(alert: IAlert) {
-    const index: number = this.alerts.indexOf(alert);
-    this.alerts.splice(index, 1);
-  }
-
-  public reset() {
-    this.alerts = this.backup.map((alert: IAlert) => Object.assign({}, alert));
+    this.alert = null;
   }
 }
 
 export interface IAlert {
-  id: number;
   type: string;
   message: string;
 }

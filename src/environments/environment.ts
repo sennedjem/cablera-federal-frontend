@@ -8,6 +8,6 @@ export const environment = {
 };
 
 export const PATHFRONTEND = 'http://localhost:4200';
-export const PATHBACKEND = 'http://localhost:8000';
+export const PATHBACKEND = 'http://localhost:8000/api';
 
 export const AUTHCALLBACKURL = 'http://localhost:4200/';

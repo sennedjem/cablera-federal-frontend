@@ -5,27 +5,30 @@
             <h1>Cablera Federal</h1>
             <form (ngSubmit)="onLoggedin(loginForm);" #loginForm="ngForm">
                 <div class="form-content">
-                    <!--<div class="form-group">
-                        <input  type="text" 
-                                id="name" placeholder="name"
-                                [(ng-model)]="user.name" 
-                                class="form-control input-underline input-lg"
-                                #name="ngModel">
-                    </div>-->
+                    <div class="form-group">
+                        <input type="text"
+                               class="form-control input-underline input-lg" 
+                               id="name" name="name" 
+                               placeholder="Name"
+                               (blur)="failLogin = false"
+                               [(ngModel)]="user.name">
+                    </div>
 
                     <div class="form-group">
-                        <input ngModel
-                               type="password"
-                               ng-model="user.password" 
-                               class="form-control input-underline input-lg" 
-                               id="password" name="password" placeholder="Password"
-                               #password="ngModel">
+                        <input type="password"
+                               class="form-control input-underline input-lg"
+                               id="password" name="password" 
+                               placeholder="Password"
+                               (blur)="failLogin = false"
+                               [(ngModel)]="user.password">
                     </div>
                 </div>
-                <button type="submit" class="btn rounded-btn" [routerLink]="['/dashboard']" translate="login.login">Log in</button>
+                <button type="submit" class="btn rounded-btn" translate="login.login">Log in</button>
                 &nbsp;
                 <a class="btn rounded-btn" [routerLink]="['/signup']" translate="login.register">Sign up</a>
             </form>
         </div>
     </div>
 </div>
+
+<app-popup *ngIf="failLogin"[type]="'danger'" [message]="'The user or password entered is incorrect'"></app-popup>
