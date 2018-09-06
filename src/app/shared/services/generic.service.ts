@@ -1,17 +1,10 @@
-import { Optional,Injectable,Inject } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 
 import { PATHBACKEND } from '../../../environments/environment';
 
 @Injectable()
-/*@Component({
-  providers: [
-    GenericRestService,
-    { provide: 'url', useValue: PATHBACKEND },
-    { provide: 'endpoint', useValue: 'users' }
-  ]
-})*/
 export class GenericService<T> {
 
   headers: HttpHeaders;

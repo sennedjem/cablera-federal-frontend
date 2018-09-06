@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
 
     user: User = new User();
     failLogin: boolean = false;
+    message: String;
 
     constructor(public router: Router, public auth: AuthService) {}
 
@@ -33,8 +34,9 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/dashboard']);
     }
 
-    setFailLogin(error){
+    setFailLogin(response){
         this.failLogin = true;
-        console.log(error);
+        this.message = response.error.message;
+        console.log(response);
     }
 }
