@@ -5,7 +5,8 @@
   "layout.submenu": "Submenú",
   "layout.collapseSidebar": "Desplegar barra lateral",
   "layout.return": "Regresar",
-  "layout.sites" : "Sitios",
+  "layout.sites" : "Sites",
+  "layout.posts" : "Posteos",
 
   "header.search": "Buscar",
   "header.language": "Idioma",
