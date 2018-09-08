@@ -5,7 +5,7 @@
   "layout.submenu": "Submenú",
   "layout.collapseSidebar": "Desplegar barra lateral",
   "layout.return": "Regresar",
-  "layout.sites" : "Sites",
+  "layout.sites" : "Sitios",
   "layout.posts" : "Posteos",
 
   "header.search": "Buscar",
@@ -20,5 +20,9 @@
   "login.password": "contraseña",
   "login.repeatPassword": "Repetir contraseña",
   "login.login": "Iniciar sesión",
-  "login.register": "Registrarse"
+  "login.register": "Registrarse",
+
+  "sites.url": "Url",
+  "sites.type": "Tipo",
+  "layout.selectASocialRed": "Seleccione una red social"
 }

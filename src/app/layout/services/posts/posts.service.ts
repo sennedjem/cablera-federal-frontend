@@ -11,6 +11,4 @@ export class PostsService {
   getPosts() {
     return this.http.get<Object[]>(`${PATHBACKEND}/posts`);
   }
-
-
 }

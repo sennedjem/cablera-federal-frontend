@@ -4,10 +4,12 @@
             <i class="fa fa-fw fa-dashboard"></i>&nbsp;
             <span>{{ 'layout.dashboard' | translate }}</span>
         </a>
+        <!--
         <a [routerLink]="['/forms']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-edit"></i>&nbsp;
             <span>{{ 'layout.forms' | translate }}</span>
         </a>
+    -->
         <a [routerLink]="['/sites']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-desktop"></i>&nbsp;
             <span>{{ 'layout.sites' | translate }}</span>
@@ -16,6 +18,7 @@
             <i class="fa fa-fw fa-newspaper-o"></i>&nbsp;
             <span>{{ 'layout.posts' | translate }}</span>
         </a>
+        <!--
         <div class="nested-menu">
             <a class="list-group-item" (click)="addExpandClass('pages')">
                 <i class="fa fa-plus"></i>&nbsp;
@@ -32,7 +35,7 @@
                 </ul>
             </li>
         </div>
-
+    -->
         <div class="header-fields">
             <a (click)="rltAndLtr()" class="list-group-item">
                 <span><i class="fa fa-arrows-h"></i>&nbsp; RTL/LTR</span>

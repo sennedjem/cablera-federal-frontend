@@ -20,5 +20,9 @@
   "login.password": "Password",
   "login.repeatPassword": "Repeat Password",
   "login.login": "Sign in",
-  "login.register": "Sign up"
+  "login.register": "Sign up",
+
+  "sites.url": "Url",
+  "sites.type": "Type",
+  "layout.selectASocialRed": "Select a social network"
 }

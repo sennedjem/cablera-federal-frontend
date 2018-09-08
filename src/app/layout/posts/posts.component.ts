@@ -2,25 +2,25 @@ import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
 import {PostsService} from "../services/posts/posts.service";
 
-
 @Component({
     selector: 'app-posts',
     templateUrl: './posts.component.html',
     styleUrls: ['./posts.component.scss'],
-    providers: [PostsService],
+    providers: [
+      PostsService
+    ],
     animations: [routerTransition()]
 })
 export class PostsComponent implements OnInit {
 
-	posts: Object[];
+  posts: Object[];
 	
+  constructor(private postsService: PostsService) {}
 
-    constructor(private postsService: PostsService) {}
-
-    ngOnInit() {
-    	this.postsService.getPosts()
-    	  .subscribe( data => {
-    	    this.posts = data;
-    	  });
- 	}
+  ngOnInit() {
+    this.postsService.getPosts()
+      .subscribe( data => {
+        this.posts = data;
+      });
+  }
 }
