@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
-import {PostsService} from "../services/posts/posts.service";
-
+import { PostsService } from '../../shared/services/posts/posts.service';
 @Component({
     selector: 'app-posts',
     templateUrl: './posts.component.html',
