@@ -32,6 +32,8 @@
     "express": "^4.16.3",
     "font-awesome": "^4.7.0",
     "ng2-charts": "^1.6.0",
+    "ngx-chips": "^1.9.7",
+    "ngx-smart-modal": "^7.0.3",
     "rxjs": "^6.1.0",
     "typescript": "~2.7.0",
     "yarn": "^1.6.0",

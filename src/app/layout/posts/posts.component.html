@@ -1,7 +1,6 @@
-<div [@routerTransition]>
+<div class="col-md-12" [@routerTransition]>
 
-<div >
-  <h2> Posts</h2>
+  <h2 class="title"> Posts</h2>
   <table class="table table-striped">
     <thead>
     <tr>
@@ -10,19 +9,24 @@
       <th style="width: 35%">Url</th>
       <th style="width: 15%">Site</th>
       <th style="width: 10%">Creation Date</th>
+      <th> Tags </th>
+      <th> Editar</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let post of posts">
-      <td > {{posts.id}}</td>
+      <td > {{post.id}}</td>
       <td > {{post.content}}</td>
       <td > {{post.url}}</td>
       <td > {{post.site}}</td>
       <td > {{post.creation_date}}</td>
+      <td > <tag-input [(ngModel)]="post.tags" [disable]='true' placeholder='' 
+      secondaryPlaceholder='' theme='bootstrap'></tag-input> </td>
+      <td > <a [routerLink]="['/posts/'+post.id]" > <i class="fa fa-pencil-square-o"></i> </a></td>
     </tr>
     </tbody>
   </table>
-</div>
+
 
 </div>
 
@@ -58,4 +62,12 @@
       </td>
   </tr>
   </tfoot>
+
+  <ngx-smart-modal #myModall customClass="bootstrap" identifier="myModall" >
+  <h1>Editar Post</h1>
+  <p>Some stuff...</p>  
+
+  <button type="reset" class="btn btn-secondary pull-right" (click)="myModall.close()">Close</button>
+  <button type="submit" style='margin-right: 5px' class="btn btn-primary pull-right">Guardar</button>
+</ngx-smart-modal>
 </table>-->

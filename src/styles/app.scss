@@ -4,9 +4,23 @@
 @import "utils";
 @import "rtl";
 @import "responsive";
+@import "~ngx-smart-modal/ngx-smart-modal";
+@import "~ngx-chips/core/styles/core/_core.scss";
+
 
 @media print {
     .breadcrumb {
         display: none !important;
     }
 }
+
+.input-panel {
+    margin-top: 20px;
+    background-color : #e8e8e8 !important; 
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.25);
+}
+
+.title {
+	margin-top: 10px;
+}
+

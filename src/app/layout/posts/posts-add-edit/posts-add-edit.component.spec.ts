@@ -1,27 +1,23 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing'
 import { RouterTestingModule } from '@angular/router/testing'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { TagInputModule } from 'ngx-chips';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-import { PostsComponent } from './posts.component'
-import { PostsModule } from './posts.module'
 
 
-describe('PostsComponent', () => {
-  let component: PostsComponent
-  let fixture: ComponentFixture<PostsComponent>
+import { PostsAddEditComponent } from './posts-add-edit.component'
+import { PostsAddEditModule } from './posts-add-edit.module'
+
+
+describe('PostsAddEditComponent', () => {
+  let component: PostsAddEditComponent
+  let fixture: ComponentFixture<PostsAddEditComponent>
 
   beforeEach(
     async(() => {
       TestBed.configureTestingModule({
         imports: [
-          PostsModule,
-          TagInputModule,
+          PostsAddEditModule,
           BrowserAnimationsModule,
-          RouterTestingModule,
-          ReactiveFormsModule,
-          FormsModule
+          RouterTestingModule
          ],
          
       }).compileComponents()
@@ -29,7 +25,7 @@ describe('PostsComponent', () => {
   )
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PostsComponent)
+    fixture = TestBed.createComponent(PostsAddEditComponent)
     component = fixture.componentInstance
     fixture.detectChanges()
   })
