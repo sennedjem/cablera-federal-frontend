@@ -21,8 +21,6 @@ export class PostsService extends GenericService<Post>{
   }
 
   public getPost(id): Observable<Post> {
-    console.log(id)
-    console.log(`${this.url}/${this.endpoint}/`+ id)
     return this.http
       .get<Post>(`${this.url}/${this.endpoint}/`+ id, {headers: this.headers});
   }

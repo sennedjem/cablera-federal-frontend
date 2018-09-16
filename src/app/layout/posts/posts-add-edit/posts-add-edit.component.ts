@@ -19,20 +19,12 @@ import { Post } from '../../../shared/models';
 export class PostsAddEditComponent implements OnInit {
 
   post: Post = new Post();
-  items: ['pepe','caca'];
 
-  constructor(private postsService: PostsService,private route: ActivatedRoute,) {}
-
-
+  constructor(private postsService: PostsService,private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.items = ['pepe','caca'];
-    let id = (this.route.snapshot.paramMap.get('id'));
-    this.postsService.getPost(id).subscribe( data => {
-        this.post = data;
-        this.post.tags = this.post.tags.map(function(tag) {return tag.description});
-        console.log(this.post.tags)
-      });
+    this.route.data.subscribe((data) => this.post = data.post);
+    this.post.tags = this.post.tags.map(function(tag) {return tag.description});
   }
 
    save(postForm: NgForm){ 
