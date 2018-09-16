@@ -13,16 +13,16 @@ import { Post } from '../../shared/models';
 })
 export class PostsComponent implements OnInit {
 
-  posts: Post[];
+   public data : Post[];
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
 
 
-    this.route.data.subscribe((data) => this.posts = data.posts);
+    this.route.data.subscribe((data) => this.data = data.posts);
 
-    this.posts.map(function(post) {
+    this.data.map(function(post) {
       return formatPost(post)});
 
     function formatPost(post){

@@ -1,20 +1,20 @@
 <div class="col-md-12" [@routerTransition]>
 
   <h2 class="title"> Posts</h2>
-  <table class="table table-striped">
+  <table class="table table-striped" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="10">
     <thead>
     <tr>
-      <th >Id</th>
-      <th style="width: 40%">Content</th>
-      <th style="width: 35%">Url</th>
-      <th style="width: 15%">Site</th>
-      <th style="width: 10%">Creation Date</th>
+      <th style="width: 5%">Id</th>
+      <th style="width: 30%">Content</th>
+      <th style="width: 15%">Url</th>
+      <th style="width: 10%">Site</th>
+      <th style="width: 15%">Creation Date</th>
       <th> Tags </th>
       <th> Editar</th>
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let post of posts">
+    <tr *ngFor="let post of mf.data">
       <td > {{post.id}}</td>
       <td > {{post.content}}</td>
       <td > {{post.url}}</td>
@@ -25,6 +25,13 @@
       <td > <a [routerLink]="['/posts/'+post.id]" > <i class="fa fa-pencil-square-o"></i> </a></td>
     </tr>
     </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="4">
+            <mfBootstrapPaginator [rowsOnPageSet]="[10,25,50]"></mfBootstrapPaginator>
+        </td>
+    </tr>
+
   </table>
 
 

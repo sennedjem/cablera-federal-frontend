@@ -6,9 +6,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PostsRoutingModule } from './posts-routing.module';
 import { PostsComponent } from './posts.component';
 import { NgxSmartModalModule } from 'ngx-smart-modal';
+import { DataTableModule } from 'angular-6-datatable';
 
 @NgModule({
-    imports: [CommonModule, PostsRoutingModule,TagInputModule,FormsModule,ReactiveFormsModule,NgxSmartModalModule.forRoot()],
+    imports: [
+    	CommonModule, 
+    	PostsRoutingModule,
+    	TagInputModule,
+    	FormsModule,
+    	ReactiveFormsModule,
+    	NgxSmartModalModule.forRoot(),
+    	DataTableModule
+    ],
     declarations: [PostsComponent],
     bootstrap: [PostsComponent]
 })
