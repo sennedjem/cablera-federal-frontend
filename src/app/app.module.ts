@@ -5,8 +5,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
+import { DataTableModule } from "angular-6-datatable";
 import { TableModule } from 'ngx-easy-table';
+import { TagInputModule } from 'ngx-chips';
+import { NgxSmartModalModule } from 'ngx-smart-modal';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,6 +32,8 @@ export const createTranslateLoader = (http: HttpClient) => {
         BrowserModule,
         BrowserAnimationsModule,
         HttpClientModule,
+        TagInputModule,
+        NgxSmartModalModule.forRoot(),
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
@@ -38,6 +43,8 @@ export const createTranslateLoader = (http: HttpClient) => {
         }),
         AppRoutingModule,
         FormsModule,
+        ReactiveFormsModule,
+        DataTableModule,
         TableModule
     ],
     exports:[

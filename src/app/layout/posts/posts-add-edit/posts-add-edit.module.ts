@@ -2,23 +2,22 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TagInputModule } from 'ngx-chips';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
-import { PostsRoutingModule } from './posts-routing.module';
-import { PostsComponent } from './posts.component';
+import { PostsAddEditRoutingModule } from './posts-add-edit-routing.module';
+import { PostsAddEditComponent } from './posts-add-edit.component';
 import { NgxSmartModalModule } from 'ngx-smart-modal';
-import { DataTableModule } from 'angular-6-datatable';
 
 @NgModule({
     imports: [
     	CommonModule, 
-    	PostsRoutingModule,
+    	PostsAddEditRoutingModule,
     	TagInputModule,
     	FormsModule,
     	ReactiveFormsModule,
     	NgxSmartModalModule.forRoot(),
-    	DataTableModule
-    ],
-    declarations: [PostsComponent],
-    bootstrap: [PostsComponent]
+    	TranslateModule],
+    declarations: [PostsAddEditComponent],
+    bootstrap: [PostsAddEditComponent]
 })
-export class PostsModule {}
+export class PostsAddEditModule {}

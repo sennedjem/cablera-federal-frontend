@@ -1,0 +1,61 @@
+<div class="col-md-12">
+    <h2 class="title"> Posts Edit</h2>
+	<div class="container" [@routerTransition]>
+
+	    <div class="row justify-content-md-center">
+	        <div class="col col-lg-12 input-panel shadow p-3 mb-5 rounded ">
+
+	        <div class=" ">
+	            <form (ngSubmit)="save(postForm);" #postForm="ngForm" >
+	                <div class="form-group">
+	                    <label class="col-md-12" for="url" translate="posts.url"></label>
+	                    <input  type="text"
+	                            class="form-control" 
+	                            id="url" name="url" 
+	                            placeholder="Url"
+	                            [(ngModel)]="post.url"
+	                            translate="posts.url">
+	                </div>
+
+	                <div class="form-group" style="margin-top:20px">
+	                    <label class="col-md-12" for="site" translate="posts.site"></label>
+	                    <input  type="text"
+	                            class="form-control" 
+	                            id="site" name="site" 
+	                            placeholder="Site"
+	                            [(ngModel)]="post.site"
+	                            translate="posts.site">
+	                </div>
+
+	                <div class="form-group" style="margin-top:20px">
+	                    <label class="col-md-12" for="creation_date" translate="posts.creationDate"></label>
+	                    <input  type="text"
+	                            class="form-control" 
+	                            id="creation_date" name="creation_date" 
+	                            placeholder="creation_date"
+	                            [(ngModel)]="post.creation_date"
+	                            translate="posts.creationDate">
+	                </div>
+
+
+	                <div class="form-group" style="margin-top:20px">
+	                    <label class="col-md-12" for="content" translate="posts.content"></label>
+	                     <textarea class="form-control" rows="6" id="content" class="form-control" [(ngModel)]="post.content" translate="posts.creationDate" name="content"> </textarea> 
+	                </div>
+
+	                <div class="form-group">
+	                	<label class="col-md-12" translate="posts.tags"></label>
+	                	<tag-input name="tags" [(ngModel)]="post.tags" modelAsStrings="true" placeholder='Add Tag' 
+      secondaryPlaceholder='Add Tag' theme='dark'></tag-input>
+	                </div>
+
+	                <button [routerLink]="['/posts']" class="btn btn-secondary pull-right">Cancelar</button>
+	                <button type="submit" style='margin-right: 5px' class="btn btn-primary pull-right">Guardar Post</button>
+	            </form>
+
+	        </div>   
+	     </div>    
+	    </div>
+
+	</div>
+</div>
