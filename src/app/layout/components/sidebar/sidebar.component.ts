@@ -69,6 +69,6 @@ export class SidebarComponent {
     }
 
     onLoggedout() {
-        localStorage.removeItem('token');
+        localStorage.removeItem('user');
     }
 }

@@ -24,13 +24,13 @@ export class LoginComponent implements OnInit {
 
     onLoggedin(form: NgForm) {
         this.auth.handleAuthentication(this.user).subscribe(
-            data => this.setTokenAndNavigate(data.token),
+            data => this.setUserAndNavigate(data),
             error => this.setFailLogin(error)
         );
     }
 
-    setTokenAndNavigate(token:string) {
-        localStorage.setItem('token', token);
+    setUserAndNavigate(user:string) {
+        localStorage.setItem('user', JSON.stringify(user));
         this.router.navigate(['/dashboard']);
     }
 

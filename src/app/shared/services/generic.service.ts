@@ -17,7 +17,7 @@ export class GenericService<T> {
     this.url = PATHBACKEND;
     this.headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': 'bearer ' + localStorage.getItem('token')
+      'Authorization': 'bearer ' + JSON.parse(localStorage.getItem('user')).token
     });
   }
 
