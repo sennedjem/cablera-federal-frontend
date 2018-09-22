@@ -1,38 +1,38 @@
 <div class="col-md-12" [@routerTransition]>
 
   <h2 class="title"> Posts</h2>
-  <table class="table table-striped" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="10">
-    <thead>
-    <tr>
-      <th style="width: 5%">Id</th>
-      <th style="width: 30%">Content</th>
-      <th style="width: 15%">Url</th>
-      <th style="width: 10%">Site</th>
-      <th style="width: 15%">Creation Date</th>
-      <th> Tags </th>
-      <th> Editar</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let post of mf.data">
-      <td > {{post.id}}</td>
-      <td > {{post.content}}</td>
-      <td > {{post.url}}</td>
-      <td > {{post.site}}</td>
-      <td > {{post.creation_date}}</td>
-      <td > <tag-input [(ngModel)]="post.tags" [disable]='true' placeholder='' 
-      secondaryPlaceholder='' theme='bootstrap'></tag-input> </td>
-      <td > <a [routerLink]="['/posts/'+post.id]" > <i class="fa fa-pencil-square-o"></i> </a></td>
-    </tr>
-    </tbody>
-    <tfoot>
-    <tr>
-        <td colspan="4">
-            <mfBootstrapPaginator [rowsOnPageSet]="[10,25,50]"></mfBootstrapPaginator>
-        </td>
-    </tr>
 
-  </table>
+
+      <ngx-table 
+        [configuration]="configuration"
+        [data]="data"
+        [columns]="columns">
+
+        <ng-template let-row>
+            <td>
+                {{row.id}}
+            </td>
+            <td>
+                {{row.content}}
+            </td>
+            <td>
+                {{row.url}}
+            </td>
+                {{row.site}}
+            <td>
+            </td>
+            <td>
+                {{row.creation_date}}
+            </td>
+            <td > <tag-input [(ngModel)]="row.tags" [disable]='true' placeholder='' 
+      secondaryPlaceholder='' theme='bootstrap'></tag-input> </td>
+            <td>
+                <a routerLink="/posts/{{row.id}}">
+                    <i class="fa fa-edit fa-2x"></i>
+                </a>
+            </td>
+        </ng-template>
+    </ngx-table>
 
 
 </div>
