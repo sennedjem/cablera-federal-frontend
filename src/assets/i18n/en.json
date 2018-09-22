@@ -7,6 +7,8 @@
   "layout.return"          : "Return",
   "layout.sites"           : "Sites",
   "layout.posts"           : "Posts",
+  "layout.edit"            : "Edit",
+  "layout.delete"          : "Delete",
 
   "header.search"   : "Search",
   "header.language" : "Language",

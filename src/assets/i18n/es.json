@@ -7,6 +7,8 @@
   "layout.return"          : "Regresar",
   "layout.sites"           : "Sitios",
   "layout.posts"           : "Posteos",
+  "layout.edit"            : "Editar",
+  "layout.delete"          : "Borrar",
 
   "header.search"   : "Buscar",
   "header.language" : "Idioma",

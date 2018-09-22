@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SitesComponent } from './sites.component';
-import { TableModule } from 'ngx-easy-table';
-import { SitesResolve } from '../../shared/resolves';
+import { SitesEditComponent } from './sites-edit.component';
+import { FormsModule }   from '@angular/forms';
+import { TypesResolve } from '../../shared/resolves';
 
 const routes: Routes = [
     {
         path: '', 
-        component: SitesComponent, 
+        component: SitesEditComponent, 
         resolve: { 
-            sitesResolve : SitesResolve 
+            types : TypesResolve 
         }
     }
 ];
@@ -18,11 +18,11 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [
         RouterModule,
-        TableModule
+        FormsModule
     ],
     providers: [
-        SitesResolve
+        TypesResolve
     ]
 })
-export class SitesRoutingModule {
+export class SitesEditRoutingModule {
 }

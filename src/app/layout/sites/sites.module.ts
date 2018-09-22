@@ -6,10 +6,11 @@ import { SitesRoutingModule } from './sites-routing.module';
 import { SitesComponent } from './sites.component';
 
 @NgModule({
-    imports: [CommonModule, 
-        TranslateModule,
-        SitesRoutingModule
-    ],
-    declarations: [SitesComponent]
+	imports: [
+		CommonModule, 
+		TranslateModule,
+		SitesRoutingModule
+	],
+	declarations: [SitesComponent]
 })
 export class SitesModule {}

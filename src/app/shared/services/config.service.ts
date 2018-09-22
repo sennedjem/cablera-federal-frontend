@@ -4,15 +4,14 @@ import { Config } from 'ngx-easy-table/src/app/ngx-easy-table/model/config';
 @Injectable()
 export class ConfigService {
   public static config: Config = {
-    searchEnabled: true,
+    searchEnabled: false,
     headerEnabled: true,
-    orderEnabled: true,
-    orderEventOnly: false,
-    globalSearchEnabled: true,
+    orderEnabled: false,
+    globalSearchEnabled: false,
     paginationEnabled: true,
     exportEnabled: false,
-    clickEvent: false,
-    selectRow: false,
+    clickEvent: true,
+    selectRow: true,
     selectCol: false,
     selectCell: false,
     rows: 10,
@@ -24,18 +23,15 @@ export class ConfigService {
     paginationRangeEnabled: true,
     collapseAllRows: false,
     checkboxes: false,
-    resizeColumn: true,
+    resizeColumn: false,
     fixedColumnWidth: false,
     horizontalScroll: false,
-    draggable: true,
+    draggable: false,
     logger: false,
-    showDetailsArrow: false,
-    showContextMenu: false,
-    persistState: true,
     tableLayout: {
-      style: 'big', // or big or tiny
-      theme: 'normal', // or dark
-      borderless: true,
+      style: 'normal',
+      theme: 'light',
+      borderless: false,
       hover: true,
       striped: true,
     }

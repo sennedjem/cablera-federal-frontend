@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
-import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { NgxSmartModalService } from 'ngx-smart-modal';
 import { Post } from '../../shared/models';
 
 @Component({
