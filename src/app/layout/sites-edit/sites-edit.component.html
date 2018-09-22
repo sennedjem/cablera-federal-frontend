@@ -3,10 +3,10 @@
 	<div class="container" [@routerTransition]>
 
 	    <div class="row justify-content-md-center">
-	        <div class="col col-lg-12 input-panel shadow p-3 mb-5 rounded ">
+	        <div class="col col-lg-8 input-panel shadow p-3 mb-5 rounded ">
 
-	        <div class=" ">
-	            <form (ngSubmit)="searchSite(sitesForm);" #sitesForm="ngForm" class="col-lg-6">
+	        <div class="d-flex justify-content-center">
+	            <form (ngSubmit)="updateSite(siteEditForm);" #siteEditForm="ngForm" class="col-lg-6">
                     <div class="form-group" style="margin-top:20px">
                         <label class="col-md-12" for="url" translate="sites.url"></label>
                         <input  type="text"
@@ -28,8 +28,8 @@
                         </select>
                     </div>
       
-                    <button type="submit" style='margin-right: 5px'class="btn btn-primary">Agregar Sitio</button>
-                    <button type="reset" class="btn btn-secondary">Limpiar campos</button>
+                    <button type="submit" style='margin-right: 5px'class="btn btn-primary">{{ 'layout.save' | translate }}</button>
+                    <a class="btn btn-secondary" [routerLink]="['/sites']">{{ 'layout.return' | translate }}</a>
                 </form>
 
 	        </div>   

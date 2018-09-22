@@ -3,25 +3,30 @@ import { Routes, RouterModule } from '@angular/router';
 import { SitesEditComponent } from './sites-edit.component';
 import { FormsModule }   from '@angular/forms';
 import { TypesResolve } from '../../shared/resolves';
+import { SitesFindResolver } from '../../shared/resolves';
 
 const routes: Routes = [
     {
         path: '', 
         component: SitesEditComponent, 
         resolve: { 
-            types : TypesResolve 
+            types : TypesResolve,
+            site : SitesFindResolver
         }
     }
 ];
 
 @NgModule({
-    imports: [RouterModule.forChild(routes)],
+    imports: [
+        RouterModule.forChild(routes)
+    ],
     exports: [
         RouterModule,
         FormsModule
     ],
     providers: [
-        TypesResolve
+        TypesResolve,
+        SitesFindResolver
     ]
 })
 export class SitesEditRoutingModule {
