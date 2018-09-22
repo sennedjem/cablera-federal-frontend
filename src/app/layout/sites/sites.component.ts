@@ -36,7 +36,14 @@ export class SitesComponent implements OnInit {
         this.configuration = ConfigService.config;
     }
 
-    delete(id: number){
-        console.log(id);
+    delete(id){
+        this.sitesService.delete(id).subscribe(
+            (data) => alert('Se eliminado el sitio exitosamente'),
+            error => console.log(error)
+        );
+        
+        this.data = this.data.filter(function(site) {
+            return site.id != id;
+          });
     }
 }

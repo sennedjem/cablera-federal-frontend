@@ -9,6 +9,8 @@
   "layout.posts"           : "Posts",
   "layout.edit"            : "Edit",
   "layout.delete"          : "Delete",
+  "layout.save"            : "Save",
+  "layout.clear"           : "Clear",
 
   "header.search"   : "Search",
   "header.language" : "Language",
@@ -32,6 +34,7 @@
 
   "sites.url"  : "Url",
   "sites.type" : "Type",
+  "sites.edit" : "Edit site",
 
   "layout.selectASocialRed": "Select a social network"
 }

@@ -9,6 +9,8 @@
   "layout.posts"           : "Posteos",
   "layout.edit"            : "Editar",
   "layout.delete"          : "Borrar",
+  "layout.save"            : "Guardar",
+  "layout.clear"           : "Limpiar campos",
 
   "header.search"   : "Buscar",
   "header.language" : "Idioma",
@@ -32,6 +34,7 @@
 
   "sites.url"  : "Url",
   "sites.type" : "Tipo",
+  "sites.edit" : "Editar sitio",
 
   "layout.selectASocialRed": "Seleccione una red social"
 }
