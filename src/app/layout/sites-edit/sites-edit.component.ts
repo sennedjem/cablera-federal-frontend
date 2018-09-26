@@ -19,7 +19,8 @@ import { Router } from '@angular/router';
 export class SitesEditComponent implements OnInit {
 
   site = {};
-  types;
+  types: [string];
+  isNew: boolean;
 
   constructor(
     private route: ActivatedRoute,
@@ -31,15 +32,22 @@ export class SitesEditComponent implements OnInit {
   ngOnInit() {
     this.route.data.subscribe((data) => {
       this.types = data.types,
-      this.site = data.site
+      this.isNew = data.site == undefined,
+      this.site = !this.isNew? data.site: {}
     });
   }
 
-  updateSite(sitesForm: NgForm){ 
-      this.sitesService.update(this.site['id'],this.site).subscribe(
-          data => alert('Se han guardado los cambios exitosamente')
+  updateSite(sitesForm: NgForm){
+    if(this.isNew)
+      this.sitesService.create(this.site).subscribe(
+        data => alert('Se guardado el sitio exitosamente')
       );
-      this._location.back();
+    else
+      this.sitesService.update(this.site['id'],this.site).subscribe(
+        data => alert('Se han guardado los cambios exitosamente')
+      );
+
+    this._location.back();
   }
 
   return(){

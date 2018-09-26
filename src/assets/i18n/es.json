@@ -34,6 +34,7 @@
 
   "sites.url"  : "Url",
   "sites.type" : "Tipo",
+  "sites.addSite" : "Agregar sitio",
   "sites.edit" : "Editar sitio",
 
   "layout.selectASocialRed": "Seleccione una red social"

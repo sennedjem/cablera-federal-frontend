@@ -23,7 +23,7 @@ export class GenericService<T> {
 
   public create(item: T): Observable<T> {
     return this.http
-      .post<T>(`${this.url}/${this.endpoint}/new`, item, {headers: this.headers});
+      .post<T>(`${this.url}/${this.endpoint}`, item, {headers: this.headers});
   }
 
   public update(primaryKey: any, item: T): Observable<T> {

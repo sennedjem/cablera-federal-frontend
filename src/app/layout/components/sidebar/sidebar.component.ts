@@ -12,6 +12,7 @@ export class SidebarComponent {
     collapsed: boolean = false;
     showMenu: string = '';
     pushRightClass: string = 'push-right';
+    loggedUser;
 
     @Output() collapsedEvent = new EventEmitter<boolean>();
     
@@ -30,6 +31,10 @@ export class SidebarComponent {
                 this.toggleSidebar();
             }
         });
+    }
+
+    ngOnInit() {
+        this.loggedUser = JSON.parse(localStorage.getItem('user'));
     }
 
     eventCalled() {
