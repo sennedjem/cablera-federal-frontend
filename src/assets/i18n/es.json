@@ -26,10 +26,11 @@
   "login.login"          : "Iniciar sesión",
   "login.register"       : "Registrarse",
 
-  "posts.content"      : "Content",
+  "posts.edit"         : "Edición de posteo",
+  "posts.content"      : "Contenido",
   "posts.url"          : "Url",
-  "posts.site"         : "Site",
-  "posts.creationDate" : "Creation Date",
+  "posts.site"         : "Sitio",
+  "posts.creationDate" : "Fecha de creación",
   "posts.tags"         : "Tags",
 
   "sites.url"  : "Url",

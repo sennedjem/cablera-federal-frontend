@@ -1,15 +1,32 @@
-<div class="m-2 hover-card card text-black" (click)="hacerAlgo()">
-    <div class="card-header">
-        <div class="row">
-            <div class="col-xs-12 mx-auto">
-                <div class="col col-xs-12 text-center">
-                    <div class="d-block"><i class="fa {{icon}} fa-5x"></i></div>
-                    <div class="d-block"><h5 class="font-weight-bold">{{title}}</h5></div>
-                </div>
+<div class="m-2 hover-card card text-black">
+    <div class="card-header" (click)="goPost()">
+        <div class="col-xs-12 mx-auto">
+            <div class="col col-xs-12 text-center">
+                <div class="d-block"><i class="postImage fa {{icon}} fa-5x"></i></div>
+                <div class="d-block"><h3 class="font-weight-bold">{{title}}</h3></div>
+            </div>        
+            <span class="float-left font-weight-bold">{{text}}</span>
+            <br><br>
+
+            <div class="float-right">
+                {{getPublishDate()}}
+                <br>
+                {{site}}
             </div>
         </div>
     </div>
     <div class="card-footer">
-        <span class="float-left">{{text}}</span>
+        <tag-input 
+            [(ngModel)]="tags" 
+            [disable]='true'
+            placeholder='' 
+            secondaryPlaceholder=''>
+        </tag-input>
+
+        <div class="float-right">
+            <a routerLink="/posts/{{id}}" >
+                <span ><i class="fa fa-edit fa-2x"></i></span>
+            </a>
+        </div>
     </div>
 </div>

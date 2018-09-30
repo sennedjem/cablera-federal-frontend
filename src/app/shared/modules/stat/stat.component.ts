@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { DateService } from '../../services';
 
 @Component({
     selector: 'app-stat',
@@ -7,15 +8,23 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class StatComponent implements OnInit {
     @Input() icon: string;
+    @Input() id: number;
     @Input() title: string;
     @Input() text: string;
     @Input() url: string;
+    @Input() tags: Array<string>;
+    @Input() publicationDate;
+    @Input() site: string;
 
-    constructor() {}
+    constructor(private dateService: DateService) {}
 
     ngOnInit() {}
 
-    hacerAlgo(){
-        window.open('https://' + this.url);
+    goPost(){
+        window.open(this.url);
+    }
+
+    getPublishDate(){
+        return this.dateService.formatDate(this.publicationDate,'short');
     }
 }

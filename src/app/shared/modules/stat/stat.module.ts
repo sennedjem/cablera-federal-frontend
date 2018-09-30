@@ -1,10 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TagInputModule } from 'ngx-chips';
 import { StatComponent } from './stat.component';
+import { FormsModule } from '@angular/forms';
+import {Routes, RouterModule} from '@angular/router';
 
 @NgModule({
-    imports: [CommonModule],
+    imports: [
+        CommonModule,
+        TagInputModule,
+        FormsModule,
+        RouterModule
+    ],
     declarations: [StatComponent],
-    exports: [StatComponent]
+    exports: [
+        StatComponent,
+        RouterModule
+    ]
 })
 export class StatModule {}

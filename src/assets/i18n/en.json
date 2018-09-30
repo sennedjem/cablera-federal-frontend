@@ -26,6 +26,7 @@
   "login.login"          : "Sign in",
   "login.register"       : "Sign up",
 
+  "posts.edit"         : "Edit post",
   "posts.content"      : "Content",
   "posts.url"          : "Url",
   "posts.site"         : "Site",
