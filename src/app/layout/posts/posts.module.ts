@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PostsRoutingModule } from './posts-routing.module';
 import { PostsComponent } from './posts.component';
 import { NgxSmartModalModule } from 'ngx-smart-modal';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { StatModule } from '../../shared';
 
 @NgModule({
@@ -15,7 +16,8 @@ import { StatModule } from '../../shared';
     	PostsRoutingModule,
     	TagInputModule,
     	FormsModule,
-    	ReactiveFormsModule,
+		ReactiveFormsModule,
+		NgxPaginationModule,
     	NgxSmartModalModule.forRoot(),
 		TranslateModule,
 		StatModule

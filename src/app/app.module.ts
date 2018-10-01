@@ -11,6 +11,7 @@ import { DataTableModule } from "angular-6-datatable";
 import { TableModule } from 'ngx-easy-table';
 import { TagInputModule } from 'ngx-chips';
 import { NgxSmartModalModule } from 'ngx-smart-modal';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -34,6 +35,7 @@ export const createTranslateLoader = (http: HttpClient) => {
         BrowserAnimationsModule,
         HttpClientModule,
         TagInputModule,
+        NgxPaginationModule,
         NgxSmartModalModule.forRoot(),
         TranslateModule.forRoot({
             loader: {
@@ -49,7 +51,8 @@ export const createTranslateLoader = (http: HttpClient) => {
         TableModule
     ],
     exports:[
-        FormsModule
+        FormsModule,
+        NgxPaginationModule
     ],
     declarations: [AppComponent],
     providers: [

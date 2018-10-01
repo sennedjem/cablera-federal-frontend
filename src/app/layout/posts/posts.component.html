@@ -2,40 +2,13 @@
 
   <h2 class="title"> {{ 'layout.posts' | translate }}</h2>
 
-
-      <!--<ngx-table 
-        [configuration]="configuration"
-        [data]="data"
-        [columns]="columns">
-
-        <ng-template let-row>
-            <td>
-                {{row.id}}
-            </td>
-            <td>
-                {{row.content}}
-            </td>
-            <td>
-                {{row.url}}
-            </td>
-                {{row.site}}
-            <td>
-            </td>
-            <td>
-                {{row.creation_date}}
-            </td>
-            <td > <tag-input [(ngModel)]="row.tags" [disable]='true' placeholder='' 
-      secondaryPlaceholder='' theme='bootstrap'></tag-input> </td>
-            <td>
-                <a routerLink="/posts/{{row.id}}">
-                    <i class="fa fa-edit fa-2x"></i>
-                </a>
-            </td>
-        </ng-template>
-    </ngx-table>-->
-
     <div class="row">
-        <div class="col-xl-3 col-lg-6" *ngFor="let d of data">
+        <div class="col-xl-3 col-lg-6" 
+            *ngFor="let d of data | paginate: { 
+                itemsPerPage: perPage, 
+                currentPage: page,
+                totalItems: count 
+            }">
             <app-stat 
                 [icon]="'fa-image'"
                 [id]="d.id" 
@@ -46,6 +19,17 @@
                 [publicationDate]="d.creation_date"
                 [site]="d.site">
             </app-stat>
+        </div>
+
+        <div class="col-xl-12 col-lg-12">
+            <div class="row justify-content-md-center">
+                <pagination-controls 
+                    (pageChange)="pageChange($event)"
+                    responsive="true"
+                    previousLabel="{{ 'layout.previous' | translate}}"
+                    nextLabel="{{ 'layout.next' | translate}}"
+                ></pagination-controls>
+            </div>
         </div>
     </div>
 

@@ -11,6 +11,6 @@ export class PostsGetAllResolver implements Resolve<Observable<Post[]>>{
 	constructor(private postsService: PostsService){}
 
 	resolve(route: ActivatedRouteSnapshot): Observable<Post[]>{
-		return this.postsService.getPosts();
+		return this.postsService.getPosts(route.queryParams.page);
 	}
 }

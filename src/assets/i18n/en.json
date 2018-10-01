@@ -5,6 +5,8 @@
   "layout.submenu"         : "Submenú",
   "layout.collapseSidebar" : "Collapse sidebar",
   "layout.return"          : "Return",
+  "layout.previous"        : "Previous",
+  "layout.next"            : "Next",
   "layout.sites"           : "Sites",
   "layout.posts"           : "Posts",
   "layout.edit"            : "Edit",
