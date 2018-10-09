@@ -14,7 +14,8 @@
 	                            id="url" name="url" 
 	                            placeholder="Url"
 	                            [(ngModel)]="post.url"
-	                            translate="posts.url">
+								translate="posts.url"
+								disabled>
 	                </div>
 
 	                <div class="form-group" style="margin-top:20px">
@@ -24,7 +25,8 @@
 	                            id="site" name="site" 
 	                            placeholder="Site"
 	                            [(ngModel)]="post.site"
-	                            translate="posts.site">
+	                            translate="posts.site"
+								disabled>
 	                </div>
 
 	                <div class="form-group" style="margin-top:20px">
@@ -34,13 +36,21 @@
 	                            id="creation_date" name="creation_date" 
 	                            placeholder="creation_date"
 	                            [(ngModel)]="post.creation_date"
-	                            translate="posts.creationDate">
+	                            translate="posts.creationDate"
+								disabled>
 	                </div>
 
 
 	                <div class="form-group" style="margin-top:20px">
 	                    <label class="col-md-12" for="content" translate="posts.content"></label>
-	                     <textarea class="form-control" rows="6" id="content" class="form-control" [(ngModel)]="post.content" translate="posts.creationDate" name="content"> </textarea> 
+						 <textarea	class="form-control" 
+									rows="6" 
+									id="content" name="content"
+									class="form-control" 
+									[(ngModel)]="post.content" 
+									translate="posts.creationDate"
+									disabled> 
+						</textarea> 
 	                </div>
 
 	                <div class="form-group">

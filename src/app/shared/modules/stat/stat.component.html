@@ -2,13 +2,14 @@
     <div class="card-header" (click)="goPost()">
         <div class="col-xs-12 mx-auto">
             <div class="col col-xs-12 text-center">
-                <div class="d-block"><i class="postImage fa {{icon}} fa-5x"></i></div>
+                <div *ngIf="image"><img src="{{image}}"></div>
+                <div *ngIf="!image" class="d-block"><i class="postImage fa {{icon}} fa-5x"></i></div>
                 <div class="d-block"><h3 class="font-weight-bold">{{title}}</h3></div>
             </div>        
-            <span class="float-left font-weight-bold">{{text}}</span>
+            <span class="float-left">{{content}}</span>
             <br><br>
 
-            <div class="float-right">
+            <div class="float-right small">
                 {{getPublishDate()}}
                 <br>
                 {{site}}
@@ -18,7 +19,6 @@
     <div class="card-footer">
         <tag-input 
             [(ngModel)]="tags" 
-            [disable]='true'
             placeholder='' 
             secondaryPlaceholder=''>
         </tag-input>

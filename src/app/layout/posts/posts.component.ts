@@ -26,6 +26,7 @@ export class PostsComponent implements OnInit {
 
   ngOnInit() {
     this.actRoute.data.subscribe((data) => {
+      console.log(data.posts.data),
       this.data = data.posts.data,
       this.count = data.posts.total,
       this.perPage = data.posts.per_page,
@@ -43,7 +44,8 @@ export class PostsComponent implements OnInit {
   }
 
   formatContent(content){
-    return content.substring(0, content.indexOf("http"));
+    //return content.substring(0, content.indexOf("http")? content.indexOf("http"): content.lenght);
+    return content + '...';
   }
 
   pageChange(newPage){

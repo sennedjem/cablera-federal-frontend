@@ -12,6 +12,6 @@ export class PostsFindResolver implements Resolve<Observable<Post>>{
 	constructor(private postsService: PostsService,private route: ActivatedRoute){}
 
 	resolve(route: ActivatedRouteSnapshot): Observable<Post>{
-		return this.postsService.getPost((route.paramMap.get('id')));
+		return this.postsService.read((route.paramMap.get('id')));
 	}
 }

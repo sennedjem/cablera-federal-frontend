@@ -19,14 +19,4 @@ export class PostsService extends GenericService<Post>{
     return this.http
       .get<Post[]>(`${this.url}/${this.endpoint}?per_page=12` + (page? `&page=${page}`:''), {headers: this.headers});
   }
-
-  public getPost(id): Observable<Post> {
-    return this.http
-      .get<Post>(`${this.url}/${this.endpoint}/`+ id, {headers: this.headers});
-  }
-
-  public savePost(post: Post): Observable<Post> {
-    return this.http
-      .put<Post>(`${this.url}/${this.endpoint}/`+post.id, post, {headers: this.headers});
-  }
 }

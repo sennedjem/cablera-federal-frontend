@@ -9,8 +9,9 @@ import { DateService } from '../../services';
 export class StatComponent implements OnInit {
     @Input() icon: string;
     @Input() id: number;
+    @Input() image: string;
     @Input() title: string;
-    @Input() text: string;
+    @Input() content: string;
     @Input() url: string;
     @Input() tags: Array<string>;
     @Input() publicationDate;
@@ -25,6 +26,6 @@ export class StatComponent implements OnInit {
     }
 
     getPublishDate(){
-        return this.dateService.formatDate(this.publicationDate,'short');
+        return this.dateService.formatDate(this.publicationDate,'dd/MM/yyyy, HH:mm');
     }
 }
