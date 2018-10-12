@@ -26,7 +26,6 @@ export class PostsComponent implements OnInit {
 
   ngOnInit() {
     this.actRoute.data.subscribe((data) => {
-      console.log(data.posts.data),
       this.data = data.posts.data,
       this.count = data.posts.total,
       this.perPage = data.posts.per_page,
@@ -44,13 +43,11 @@ export class PostsComponent implements OnInit {
   }
 
   formatContent(content){
-    //return content.substring(0, content.indexOf("http")? content.indexOf("http"): content.lenght);
     return content + '...';
   }
 
   pageChange(newPage){
     this.page = newPage
-    this.postsService
     
     this.route.navigate([], {
       queryParams: {
@@ -58,6 +55,10 @@ export class PostsComponent implements OnInit {
       }
     });
 
-    window.location.reload();
+    this.postsService.getPosts("" + this.page).subscribe(
+      data => this.data = data['data']
+    );
+
+    window.scrollTo(0, 0);
   }
 }
