@@ -28,9 +28,9 @@ export class SitesComponent implements OnInit {
 
         /* Para la tabla */
         this.columns = [
-            { key: 'type', title: 'Type', placeholder: 'Filtrar por tipo'},
+            { key: 'type', title: 'Tipo', placeholder: 'Filtrar por tipo'},
             { key: 'url', title: 'Url', placeholder: 'Filtrar por url' },
-            { key: 'created_at', title: 'Created_at', placeholder: 'Creado en...' }
+            { key: 'created_at', title: 'Creado en', placeholder: 'Creado en...' }
         ];
         
         this.configuration = ConfigService.config;
