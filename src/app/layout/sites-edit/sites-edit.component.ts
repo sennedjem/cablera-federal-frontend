@@ -6,6 +6,7 @@ import { ConfigService } from '../../shared/services';
 import { ActivatedRoute } from '@angular/router';
 import {Location} from '@angular/common';
 import { Router } from '@angular/router';
+import { Site } from '../../shared/models';
 
 @Component({
   selector: 'app-sites-edit',
@@ -18,7 +19,7 @@ import { Router } from '@angular/router';
 })
 export class SitesEditComponent implements OnInit {
 
-  site = {};
+  site: Site;
   types: [string];
   isNew: boolean;
 

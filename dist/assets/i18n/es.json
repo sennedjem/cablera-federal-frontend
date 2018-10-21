@@ -1,0 +1,44 @@
+{
+  "layout.dashboard"       : "Principal",
+  "layout.forms"           : "Formulario",
+  "layout.menu"            : "Menú",
+  "layout.submenu"         : "Submenú",
+  "layout.collapseSidebar" : "Desplegar barra lateral",
+  "layout.return"          : "Regresar",
+  "layout.previous"        : "Anterior",
+  "layout.next"            : "Siguiente",
+  "layout.sites"           : "Sitios",
+  "layout.posts"           : "Posteos",
+  "layout.edit"            : "Editar",
+  "layout.delete"          : "Borrar",
+  "layout.save"            : "Guardar",
+  "layout.clear"           : "Limpiar campos",
+
+  "header.search"   : "Buscar",
+  "header.language" : "Idioma",
+  "header.spanish"  : "Español",
+  "header.english"  : "Inglés",
+  "header.profile"  : "Perfil",
+  "header.logout"   : "Cerrar sesión",
+
+  "login.fullName"       : "Nombre completo",
+  "login.email"          : "e-mail",
+  "login.password"       : "contraseña",
+  "login.repeatPassword" : "Repetir contraseña",
+  "login.login"          : "Iniciar sesión",
+  "login.register"       : "Registrarse",
+
+  "posts.edit"         : "Edición de posteo",
+  "posts.content"      : "Contenido",
+  "posts.url"          : "Url",
+  "posts.site"         : "Sitio",
+  "posts.creationDate" : "Fecha de creación",
+  "posts.tags"         : "Tags",
+
+  "sites.url"  : "Url",
+  "sites.type" : "Tipo",
+  "sites.addSite" : "Agregar sitio",
+  "sites.edit" : "Editar sitio",
+
+  "layout.selectASocialRed": "Seleccione una red social"
+}

@@ -1,0 +1,44 @@
+{
+  "layout.dashboard"       : "Dashboard",
+  "layout.forms"           : "Form",
+  "layout.menu"            : "Menú",
+  "layout.submenu"         : "Submenú",
+  "layout.collapseSidebar" : "Collapse sidebar",
+  "layout.return"          : "Return",
+  "layout.previous"        : "Previous",
+  "layout.next"            : "Next",
+  "layout.sites"           : "Sites",
+  "layout.posts"           : "Posts",
+  "layout.edit"            : "Edit",
+  "layout.delete"          : "Delete",
+  "layout.save"            : "Save",
+  "layout.clear"           : "Clear",
+
+  "header.search"   : "Search",
+  "header.language" : "Language",
+  "header.spanish"  : "Spanish",
+  "header.english"  : "English",
+  "header.profile"  : "Profile",
+  "header.logout"   : "Log out",
+
+  "login.fullName"       : "Full name",
+  "login.email"          : "e-mail",
+  "login.password"       : "Password",
+  "login.repeatPassword" : "Repeat Password",
+  "login.login"          : "Sign in",
+  "login.register"       : "Sign up",
+
+  "posts.edit"         : "Edit post",
+  "posts.content"      : "Content",
+  "posts.url"          : "Url",
+  "posts.site"         : "Site",
+  "posts.creationDate" : "Creation Date",
+  "posts.tags"         : "Tags",
+
+  "sites.url"  : "Url",
+  "sites.type" : "Type",
+  "sites.addSite" : "Add site",
+  "sites.edit" : "Edit site",
+
+  "layout.selectASocialRed": "Select a social network"
+}

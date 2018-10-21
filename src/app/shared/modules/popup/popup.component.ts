@@ -13,7 +13,7 @@ export class PopupComponent implements OnInit {
   @Input()
   public message: string;
 
-  private alert: IAlert;
+  public alert: IAlert;
 
   constructor() { 
     this.alert = {
