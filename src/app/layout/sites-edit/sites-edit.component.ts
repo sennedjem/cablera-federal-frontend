@@ -22,6 +22,9 @@ export class SitesEditComponent implements OnInit {
   site: Site;
   types: [string];
   isNew: boolean;
+  showPopup: boolean = false;
+  message: String;
+  popupType: String;
 
   constructor(
     private route: ActivatedRoute,
@@ -42,18 +45,37 @@ export class SitesEditComponent implements OnInit {
   updateSite(sitesForm: NgForm){
     if(this.isNew)
       this.sitesService.create(this.site).subscribe(
-        data => alert('Se guardado el sitio exitosamente')
+        (data) => {
+          this.showSuccess();
+          this._location.back();
+        },
+        (err) => {
+          this.showError(err)
+        }
       );
     else
       this.sitesService.update(this.site['id'],this.site).subscribe(
-        data => alert('Se han guardado los cambios exitosamente')
+        (data) => {
+          this.showSuccess();
+          this._location.back();
+        },
+        (err) => {
+          this.showError(err)
+        }
       );
 
-    this._location.back();
   }
 
-  printform(sitesForm: NgForm){
-    console.log(sitesForm)
+  showError(err){
+    this.showPopup = true;
+    this.message = err.error.message;
+    this.popupType = 'danger';
+  }
+
+  showSuccess(){
+    this.showPopup = true;
+    this.message = "Sites saved";
+    this.popupType = 'success';
   }
 
   urlAndTypeAreNotUnique(){

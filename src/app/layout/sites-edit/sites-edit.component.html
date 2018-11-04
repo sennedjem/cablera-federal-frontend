@@ -1,4 +1,5 @@
 <div class="col-md-12">
+    <app-popup *ngIf="showPopup" [type]="popupType" [message]="message"></app-popup>
     <h2 class="title"> {{ 'sites.edit' | translate }}</h2>
 	<div class="container" [@routerTransition]>
 
@@ -6,7 +7,7 @@
 	        <div class="col col-lg-8 input-panel shadow p-3 mb-5 rounded ">
 
 	        <div class="d-flex justify-content-center">
-	            <form (ngSubmit)="siteEditForm.valid && !urlAndTypeAreNotUnique() && updateSite(siteEditForm) || urlAndTypeAreNotUnique();" #siteEditForm="ngForm" class="col-lg-6">
+	            <form (ngSubmit)="siteEditForm.valid && updateSite(siteEditForm) || urlAndTypeAreNotUnique();" #siteEditForm="ngForm" class="col-lg-6">
                     <div class="form-group" style="margin-top:20px">
                         <label class="col-md-12" for="url" translate="sites.url"></label>
                         <input  type="text"
@@ -57,3 +58,4 @@
 
 	</div>
 </div>
+
