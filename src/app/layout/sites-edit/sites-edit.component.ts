@@ -34,7 +34,8 @@ export class SitesEditComponent implements OnInit {
     this.route.data.subscribe((data) => {
       this.types = data.types,
       this.isNew = data.site == undefined,
-      this.site = !this.isNew? data.site: {}
+      this.sites = data.sites.data;
+      this.site = !this.isNew? data.site: {"url":"","type":"","media_id":1,"user_id":JSON.parse(localStorage.getItem('user')).id};
     });
   }
 
@@ -49,6 +50,18 @@ export class SitesEditComponent implements OnInit {
       );
 
     this._location.back();
+  }
+
+  printform(sitesForm: NgForm){
+    console.log(sitesForm)
+  }
+
+  urlAndTypeAreNotUnique(){
+    return (this.site.url != "") && (this.site.type != "") && this.sites.some(this.sameUrlAndType,this);
+  }
+
+  sameUrlAndType(element, index, array){
+    return ((element.id!=this.site.id) && (element.url == this.site.url) && (element.type == this.site.type));
   }
 
   return(){

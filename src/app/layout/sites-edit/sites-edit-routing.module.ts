@@ -4,6 +4,7 @@ import { SitesEditComponent } from './sites-edit.component';
 import { FormsModule }   from '@angular/forms';
 import { TypesResolve } from '../../shared/resolves';
 import { SitesFindResolver } from '../../shared/resolves';
+import { SitesResolve } from '../../shared/resolves';
 
 const routes: Routes = [
     {
@@ -11,7 +12,8 @@ const routes: Routes = [
         component: SitesEditComponent, 
         resolve: { 
             types : TypesResolve,
-            site : SitesFindResolver
+            site : SitesFindResolver,
+            sites : SitesResolve 
         }
     }
 ];
@@ -26,7 +28,8 @@ const routes: Routes = [
     ],
     providers: [
         TypesResolve,
-        SitesFindResolver
+        SitesFindResolver,
+        SitesResolve
     ]
 })
 export class SitesEditRoutingModule {
