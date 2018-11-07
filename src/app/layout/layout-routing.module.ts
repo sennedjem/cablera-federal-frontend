@@ -13,6 +13,9 @@ const routes: Routes = [
             { path: 'sites', loadChildren: './sites/sites.module#SitesModule' },
             { path: 'sites/new', loadChildren: './sites-edit/sites-edit.module#SitesEditModule' },
             { path: 'sites/:id', loadChildren: './sites-edit/sites-edit.module#SitesEditModule' },
+            { path: 'media', loadChildren: './media/media.module#MediaModule' },
+            { path: 'media/new', loadChildren: './media-edit/media-edit.module#MediaEditModule' },
+            { path: 'media/:id', loadChildren: './media-edit/media-edit.module#MediaEditModule' },
             { path: 'posts', loadChildren: './posts/posts.module#PostsModule' },
             { path: 'posts/:id', loadChildren: './posts/posts-add-edit/posts-add-edit.module#PostsAddEditModule' }
         ]

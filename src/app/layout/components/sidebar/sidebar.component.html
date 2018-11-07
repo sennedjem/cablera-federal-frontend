@@ -14,6 +14,10 @@
             <i class="fa fa-fw fa-desktop"></i>&nbsp;
             <span>{{ 'layout.sites' | translate }}</span>
         </a>
+        <a [routerLink]="['/media']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-fw fa-newspaper-o"></i>&nbsp;
+            <span>{{ 'layout.media' | translate }}</span>
+        </a>
         <a [routerLink]="['/posts']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-newspaper-o"></i>&nbsp;
             <span>{{ 'layout.posts' | translate }}</span>

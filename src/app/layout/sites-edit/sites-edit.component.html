@@ -7,7 +7,7 @@
 	        <div class="col col-lg-8 input-panel shadow p-3 mb-5 rounded ">
 
 	        <div class="d-flex justify-content-center">
-	            <form (ngSubmit)="siteEditForm.valid && updateSite(siteEditForm) || urlAndTypeAreNotUnique();" #siteEditForm="ngForm" class="col-lg-6">
+	            <form (ngSubmit)="siteEditForm.valid && !urlAndTypeAreNotUnique() && updateSite(siteEditForm) || urlAndTypeAreNotUnique();" #siteEditForm="ngForm" class="col-lg-6">
                     <div class="form-group" style="margin-top:20px">
                         <label class="col-md-12" for="url" translate="sites.url"></label>
                         <input  type="text"
@@ -25,7 +25,7 @@
                             url is required.
                           </div>
                           <div *ngIf="urlAndTypeAreNotUnique()">
-                            url and type not are unique
+                            {{ 'errors.tpyAndUrlNotUnique' | translate }}
                           </div>
                         </div>        
                     </div>
@@ -44,6 +44,24 @@
                             class="invalid-feedback">
                           <div *ngIf="type.errors.required">
                             type is required.
+                          </div>
+                        </div>   
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-12" for="media_id" translate="sites.media_id"></label>
+                        <select class="form-control col-md-12" 
+                                id="media_id" name="media_id" 
+                                [(ngModel)]="site.media_id" required
+                                [ngClass]="{ 'is-invalid': siteEditForm.submitted && media_id.invalid }"
+                                #media_id="ngModel">
+                            <option  disabled selected translate="layout.selectASocialRed"></option>
+                            <option *ngFor="let media of medias" [ngValue]="media.id">{{media.name}}</option>
+                        </select>
+                        <div *ngIf="siteEditForm.submitted && media_id.invalid"
+                            class="invalid-feedback">
+                          <div *ngIf="media_id.errors.required">
+                            media is required.
                           </div>
                         </div>   
                     </div>

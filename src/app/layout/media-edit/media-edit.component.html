@@ -1,0 +1,60 @@
+<div class="col-md-12">
+    <app-popup *ngIf="showPopup" [type]="popupType" [message]="message"></app-popup>
+    <h2 class="title"> {{ 'media.edit' | translate }}</h2>
+	<div class="container" [@routerTransition]>
+
+	    <div class="row justify-content-md-center">
+	        <div class="col col-lg-8 input-panel shadow p-3 mb-5 rounded ">
+
+	        <div class="d-flex justify-content-center">
+	            <form (ngSubmit)="mediaEditForm.valid  && updateMedia(mediaEditForm);" #mediaEditForm="ngForm" class="col-lg-6">
+                    <div class="form-group" style="margin-top:20px">
+                        <label class="col-md-12" for="name" translate="media.name"></label>
+                        <input  type="text"
+                                class="form-control" 
+                                id="name" name="name" 
+                                #name="ngModel"
+                                placeholder="name"
+                                required
+                                [(ngModel)]="media.name"
+                                translate="media.name"
+                                [ngClass]="{ 'is-invalid': (mediaEditForm.submitted && name.invalid)}">
+                        <div *ngIf="(mediaEditForm.submitted && name.invalid)"
+                            class="invalid-feedback">
+                          <div *ngIf="name.errors && name.errors.required">
+                            name is required.
+                          </div>
+                        </div>        
+                    </div>
+
+                    <div class="form-group" style="margin-top:20px">
+                        <label class="col-md-12" for="district" translate="media.district"></label>
+                        <input  type="text"
+                                class="form-control" 
+                                id="district" name="district" 
+                                #district="ngModel"
+                                placeholder="district"
+                                required
+                                [(ngModel)]="media.district"
+                                translate="media.district"
+                                [ngClass]="{ 'is-invalid': (mediaEditForm.submitted && district.invalid)}">
+                        <div *ngIf="(mediaEditForm.submitted && district.invalid)"
+                            class="invalid-feedback">
+                          <div *ngIf="district.errors && district.errors.required">
+                            district is required.
+                          </div>
+                        </div>        
+                    </div>
+      
+
+                    <button type="submit" style='margin-right: 5px'class="btn btn-primary">{{ 'layout.save' | translate }}</button>
+                    <a class="btn btn-secondary" [routerLink]="['/medias']">{{ 'layout.return' | translate }}</a>
+                </form>
+
+	        </div>   
+	     </div>    
+	    </div>
+
+	</div>
+</div>
+
