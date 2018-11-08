@@ -28,4 +28,20 @@ export class StatComponent implements OnInit {
     getPublishDate(){
         return this.dateService.formatDate(this.publicationDate,'dd/MM/yyyy, HH:mm');
     }
+
+    hasImage(){
+        return (
+            this.image 
+        ) &&
+        (
+            this.image.startsWith("http") || 
+            this.image.startsWith("https")
+        ) &&
+        (
+            this.image.endsWith("jpg") || 
+            this.image.endsWith("jpeg") || 
+            this.image.endsWith("png") || 
+            this.image.endsWith("gif")
+        );
+    }
 }
