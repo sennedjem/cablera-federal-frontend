@@ -9,10 +9,13 @@
   "layout.next"            : "Next",
   "layout.sites"           : "Sites",
   "layout.posts"           : "Posts",
+  "layout.media"           : "Media",
   "layout.edit"            : "Edit",
   "layout.delete"          : "Delete",
   "layout.save"            : "Save",
   "layout.clear"           : "Clear",
+
+  "errors.tpyAndUrlNotUnique" : "Url and Type not are unique",
 
   "header.search"   : "Search",
   "header.language" : "Language",
@@ -35,10 +38,16 @@
   "posts.creationDate" : "Creation Date",
   "posts.tags"         : "Tags",
 
-  "sites.url"  : "Url",
-  "sites.type" : "Type",
-  "sites.addSite" : "Add site",
-  "sites.edit" : "Edit site",
+  "sites.url"      : "Url",
+  "sites.type"     : "Type",
+  "sites.addSite"  : "Add site",
+  "sites.edit"     : "Edit site",
+  "sites.media_id" : "Media",
+
+  "media.addMedia" : "Add media",
+  "media.name"     : "Name",
+  "media.district" : "District",  
+  "media.edit"     : "Edit media",
 
   "layout.selectASocialRed": "Select a social network"
 }

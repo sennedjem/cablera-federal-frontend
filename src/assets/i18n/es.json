@@ -9,10 +9,13 @@
   "layout.next"            : "Siguiente",
   "layout.sites"           : "Sitios",
   "layout.posts"           : "Posteos",
+  "layout.media"           : "Medios",
   "layout.edit"            : "Editar",
   "layout.delete"          : "Borrar",
   "layout.save"            : "Guardar",
   "layout.clear"           : "Limpiar campos",
+
+  "errors.tpyAndUrlNotUnique" : "El tipo y la url no pueden estar repetidos",
 
   "header.search"   : "Buscar",
   "header.language" : "Idioma",
@@ -35,10 +38,16 @@
   "posts.creationDate" : "Fecha de creación",
   "posts.tags"         : "Tags",
 
-  "sites.url"  : "Url",
-  "sites.type" : "Tipo",
-  "sites.addSite" : "Agregar sitio",
-  "sites.edit" : "Editar sitio",
+  "sites.url"      : "Url",
+  "sites.type"     : "Tipo",
+  "sites.addSite"  : "Agregar sitio",
+  "sites.edit"     : "Editar sitio",
+  "sites.media_id" : "Medio",  
+
+  "media.addMedia" : "Agregar medio",
+  "media.name"     : "Nombre",
+  "media.district" : "Distrito",
+  "media.edit"     : "Editar medio",
 
   "layout.selectASocialRed": "Seleccione una red social"
 }
