@@ -20,6 +20,7 @@ import { Site } from '../../shared/models';
 export class SitesEditComponent implements OnInit {
 
   site: Site;
+  sites: Site[];
   types: [string];
   isNew: boolean;
   showPopup: boolean = false;

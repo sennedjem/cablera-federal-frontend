@@ -2,8 +2,8 @@
     <div class="card-header" (click)="goPost()">
         <div class="col-xs-12 mx-auto">
             <div class="col col-xs-12 text-center">
-                <div *ngIf="image"><img src="{{image}}"></div>
-                <div *ngIf="!image" class="d-block"><i class="postImage fa {{icon}} fa-5x"></i></div>
+                <div *ngIf="hasImage()"><img src="{{image}}"></div>
+                <div *ngIf="!hasImage()" class="d-block"><i class="postImage fa {{icon}} fa-5x"></i></div>
                 <div class="d-block"><h3 class="font-weight-bold">{{title}}</h3></div>
             </div>        
             <span class="float-left">{{content}}</span>
