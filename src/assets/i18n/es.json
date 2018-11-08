@@ -1,4 +1,6 @@
 {
+  "dashboard.text"         : "Bienvenidos a cablera federal, aquí podrá encontrar sus fuentes centralizadas",
+  
   "layout.dashboard"       : "Principal",
   "layout.forms"           : "Formulario",
   "layout.menu"            : "Menú",

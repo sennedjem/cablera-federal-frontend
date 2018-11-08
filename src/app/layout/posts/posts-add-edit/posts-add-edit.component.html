@@ -4,9 +4,9 @@
 
 	    <div class="row justify-content-md-center">
 	        <div class="col col-lg-12 input-panel shadow p-3 mb-5 rounded ">
-
-	        <div class=" ">
-	            <form (ngSubmit)="save(postForm);" #postForm="ngForm" >
+	        <form (ngSubmit)="save(postForm);" #postForm="ngForm" >
+	        <div class="row">
+	        	<div class="col-md-6">
 	                <div class="form-group">
 	                    <label class="col-md-12" for="url" translate="posts.url"></label>
 	                    <input  type="text"
@@ -53,6 +53,10 @@
 						</textarea> 
 	                </div>
 
+	            </div>    
+
+	            <div class="col-md-5">
+
 	                <div class="form-group">
 	                	<label class="col-md-12" translate="posts.tags"></label>
 	                	<tag-input name="tags" [(ngModel)]="post.tags" modelAsStrings="true" placeholder='Add Tag' 
@@ -61,11 +65,12 @@
 
 	                <button [routerLink]="['/posts']" class="btn btn-secondary pull-right">Cancelar</button>
 	                <button type="submit" style='margin-right: 5px' class="btn btn-primary pull-right">Guardar Post</button>
-	            </form>
-
+	            </div>  
+	         </div>	 
+	        </form>
 	        </div>   
-	     </div>    
-	    </div>
 
+	    </div>    
 	</div>
+
 </div>
