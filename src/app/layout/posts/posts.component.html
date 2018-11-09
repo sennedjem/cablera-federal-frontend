@@ -18,7 +18,7 @@
             *ngFor="let d of data | paginate: { 
                 itemsPerPage: perPage, 
                 currentPage: page,
-                totalItems: count 
+                totalItems: count
             }">
             <app-stat 
                 [icon]="'fa-image'"

@@ -3,8 +3,6 @@ import { routerTransition } from '../../../router.animations';
 import { PostsService } from '../../../shared/services/posts/posts.service';
 import { NgForm, ReactiveFormsModule} from '@angular/forms';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
-import { TagInputModule } from 'ngx-chips';
 import { Post } from '../../../shared/models';
 
 @Component({
@@ -32,7 +30,6 @@ export class PostsAddEditComponent implements OnInit {
   }
 
    save(postForm: NgForm){
-     console.log(this.post)
       this.postsService.update(this.post.id,this.post).subscribe(
         data => this.router.navigate(['/posts']),
         error => alert(error)

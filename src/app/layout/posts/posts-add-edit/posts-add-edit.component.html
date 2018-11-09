@@ -63,8 +63,8 @@
       secondaryPlaceholder='Add Tag' theme='dark'></tag-input>
 	                </div>
 
-	                <button [routerLink]="['/posts']" class="btn btn-secondary pull-right">Cancelar</button>
-	                <button type="submit" style='margin-right: 5px' class="btn btn-primary pull-right">Guardar Post</button>
+	                <button type="submit" style='margin-right: 5px'class="btn btn-primary">{{ 'layout.save' | translate }}</button>
+                    <a class="btn btn-secondary" [routerLink]="['/sites']">{{ 'layout.return' | translate }}</a>
 	            </div>  
 	         </div>	 
 	        </form>
