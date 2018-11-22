@@ -9,6 +9,7 @@ import { PostsComponent } from './posts.component';
 import { NgxSmartModalModule } from 'ngx-smart-modal';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { StatModule } from '../../shared';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
     imports: [
@@ -20,7 +21,8 @@ import { StatModule } from '../../shared';
 		NgxPaginationModule,
     	NgxSmartModalModule.forRoot(),
 		TranslateModule,
-		StatModule
+		StatModule,
+		NgbModule
     ],
     declarations: [PostsComponent],
     bootstrap: [PostsComponent]

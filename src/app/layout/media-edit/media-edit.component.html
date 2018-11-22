@@ -14,7 +14,7 @@
                                 class="form-control" 
                                 id="name" name="name" 
                                 #name="ngModel"
-                                placeholder="name"
+                                placeholder="{{ 'media.name'| translate }}"
                                 required
                                 [(ngModel)]="media.name"
                                 translate="media.name"
@@ -33,7 +33,7 @@
                                 class="form-control" 
                                 id="district" name="district" 
                                 #district="ngModel"
-                                placeholder="district"
+                                placeholder="{{ 'media.district' | translate }}"
                                 required
                                 [(ngModel)]="media.district"
                                 translate="media.district"

@@ -12,7 +12,10 @@ const routes: Routes = [
 
 @NgModule({
     imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule,FormsModule],
+    exports: [
+        RouterModule,
+        FormsModule
+    ],
     providers: [PostsFindResolver]
 })
 export class PostsAddEditRoutingModule {

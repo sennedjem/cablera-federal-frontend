@@ -1,18 +1,75 @@
 <div class="col-md-12" [@routerTransition]>
 
-  <h2 class="title"> {{ 'layout.posts' | translate }}</h2>
+    <h2 class="title"> {{ 'layout.posts' | translate }}</h2>
 
-    <div class="row">
-        <div class="col-xl-12 col-lg-12">
-            <div class="row justify-content-md-center">
-                <pagination-controls 
-                    (pageChange)="pageChange($event)"
-                    responsive="true"
-                    previousLabel="{{ 'layout.previous' | translate}}"
-                    nextLabel="{{ 'layout.next' | translate}}"
-                ></pagination-controls>
+    <form (ngSubmit)="filter(filterForm);" #filterForm="ngForm">
+        <div class="row">
+
+            <div class="col-md-4 m-1">
+                <label class="col-md-12" for="media_id" translate="posts.forTags"></label>
+                <div class="form-content">
+                    <div class="form-group">
+                        <tag-input
+                            id="tags" name="tags"
+                            [(ngModel)]="filters.tags"
+                            secondaryPlaceholder="{{ 'posts.tags' | translate }}">
+                        </tag-input>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2 m-1">
+                <label class="col-md-12" for="media_id" translate="posts.forMedia"></label>
+                <select class="form-control col-md-12" 
+                        id="media_id" name="media_id" 
+                        [(ngModel)]="filters.media_id"
+                        #media_id="ngModel">
+                    <option disabled selected translate="layout.selectASocialRed">hola</option>
+                    <option *ngFor="let media of medias" [ngValue]="media.id">{{media.name}}</option>
+                </select>
+            </div>
+
+            <div class="col-md-2 m-1">
+                <label class="col-md-12" for="type" translate="posts.forType"></label>
+                <select class="form-control col-md-12" 
+                        id="type" name="type" 
+                        [(ngModel)]="filters.type"
+                        #type="ngModel">
+                    <option disabled selected translate="layout.selectASiteType"></option>
+                    <option *ngFor="let type of types" [ngValue]="type">{{type}}</option>
+                </select>
+            </div>
+
+            <div class="col-md-3 m-1">
+                <label class="col-md-12" for="media_id" translate="posts.forDate"></label>
+                <div class="input-group col-md-12">
+                    <input  class="form-control" 
+                            placeholder="yyyy-mm-dd"
+                            name="date" id="date" 
+                            (click)="d.toggle()" 
+                            [(ngModel)]="filters.dateFront" 
+                            ngbDatepicker
+                            #d="ngbDatepicker">
+
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary calendar" 
+                                (click)="d.toggle()" 
+                                type="button">
+                            <i class="fa fa-calendar"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="row m-2">
+            <div class="col-md text-center">
+                <button type="submit" class="btn btn-primary" translate="layout.filter"></button>
             </div>
         </div>
+    </form>
+
+    <div class="row">
 
         <div class="col-xl-6 col-lg-6" 
             *ngFor="let d of data | paginate: { 
@@ -27,7 +84,7 @@
                 [title]="d.title"
                 [content]="formatContent(d.content)" 
                 [url]="d.url"
-                [tags]="d.tags" 
+                [tags]="d.tags"
                 [publicationDate]="d.creation_date"
                 [site]="d.site">
             </app-stat>

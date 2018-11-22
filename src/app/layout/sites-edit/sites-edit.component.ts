@@ -22,7 +22,7 @@ export class SitesEditComponent implements OnInit {
   site: Site;
   sites: [Site];
   types: [string];
-  medias: [Media]
+  medias: [Media];
   isNew: boolean;
   showPopup: boolean = false;
   message: String;

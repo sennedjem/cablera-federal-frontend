@@ -6,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { DataTableModule } from "angular-6-datatable";
 import { TableModule } from 'ngx-easy-table';
@@ -48,11 +49,13 @@ export const createTranslateLoader = (http: HttpClient) => {
         FormsModule,
         ReactiveFormsModule,
         DataTableModule,
-        TableModule
+        TableModule,
+        NgbModule.forRoot()
     ],
     exports:[
         FormsModule,
-        NgxPaginationModule
+        NgxPaginationModule,
+        NgbModule
     ],
     declarations: [AppComponent],
     providers: [

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../../router.animations';
 import { PostsService } from '../../../shared/services/posts/posts.service';
-import { NgForm, ReactiveFormsModule} from '@angular/forms';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { NgForm} from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Post } from '../../../shared/models';
 
 @Component({

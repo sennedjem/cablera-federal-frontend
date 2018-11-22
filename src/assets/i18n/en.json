@@ -1,5 +1,4 @@
 {
-
   "dashboard.text"         : "Bienvenidos a cablera federal, aquí podrá encontrar sus fuentes centralizadas",
 
   "layout.dashboard"       : "Dashboard",
@@ -17,6 +16,10 @@
   "layout.delete"          : "Delete",
   "layout.save"            : "Save",
   "layout.clear"           : "Clear",
+  "layout.selectASocialRed": "Select a social network",
+  "layout.selectASiteType" : "Select a site type",
+  "layout.datepicker"      : "yyyy-mm-dd",
+  "layout.filter"          : "Filter",
 
   "errors.tpyAndUrlNotUnique" : "Url and Type not are unique",
 
@@ -40,6 +43,10 @@
   "posts.site"         : "Site",
   "posts.creationDate" : "Creation Date",
   "posts.tags"         : "Tags",
+  "posts.forTags"      : "For tags",
+  "posts.forMedia"     : "For Media",
+  "posts.forType"      : "For type",
+  "posts.forDate"      : "For date",
 
   "sites.url"      : "Url",
   "sites.type"     : "Type",
@@ -50,7 +57,5 @@
   "media.addMedia" : "Add media",
   "media.name"     : "Name",
   "media.district" : "District",  
-  "media.edit"     : "Edit media",
-
-  "layout.selectASocialRed": "Select a social network"
+  "media.edit"     : "Edit media"
 }

@@ -2,11 +2,17 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PostsComponent } from './posts.component';
 import { TableModule } from 'ngx-easy-table';
-import { PostsGetAllResolver } from '../../shared/resolves/posts-get-all-resolver'
+import { MediaResolve, PostsGetAllResolver, TypesResolve } from '../../shared';
 
 const routes: Routes = [
     {
-        path: '', component: PostsComponent, resolve: {posts : PostsGetAllResolver}
+        path: '', 
+        component: PostsComponent, 
+        resolve: {
+            posts : PostsGetAllResolver,
+            types : TypesResolve,
+            medias : MediaResolve
+        }
     }
 ];
 
@@ -16,7 +22,11 @@ const routes: Routes = [
     	RouterModule,
         TableModule
     ],
-    providers: [PostsGetAllResolver]
+    providers: [
+        PostsGetAllResolver,
+        TypesResolve,
+        MediaResolve
+    ]
 })
 export class PostsRoutingModule {
 }

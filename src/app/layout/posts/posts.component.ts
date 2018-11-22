@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
 import { Router,ActivatedRoute } from '@angular/router';
-import { Post } from '../../shared/models';
+import { Post, Media } from '../../shared/models';
 import { PostsService } from '../../shared/services/posts/posts.service';
+import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     selector: 'app-posts',
@@ -12,10 +13,16 @@ import { PostsService } from '../../shared/services/posts/posts.service';
 })
 export class PostsComponent implements OnInit {
 
-   data : Post[];
-   count: number;
-   perPage: number;
-   page: number;
+  data : Post[];
+  count: number;
+  perPage: number;
+  page: number;
+  
+  filters = {};
+  types;
+  medias: [Media];
+
+  model: NgbDateStruct;
 
   constructor(
     private route: Router,
@@ -29,7 +36,10 @@ export class PostsComponent implements OnInit {
       this.data = data.posts.data,
       this.count = data.posts.total,
       this.perPage = data.posts.per_page,
-      this.page = data.posts.current_page
+      this.page = data.posts.current_page,
+
+      this.types = data.types,
+      this.medias = data.medias.data;
     });
 
     this.data.map(function(post) {
@@ -56,9 +66,50 @@ export class PostsComponent implements OnInit {
     });
 
     this.postsService.getPosts("" + this.page).subscribe(
-      data => this.data = data['data']
+      data => {
+        this.data = formatPosts(data['data'])
+      }
     );
 
+    function formatPosts(posts){
+      posts.map(function(post){
+        return formatTags(post);
+      })
+      
+      return posts;
+    }
+
+    function formatTags(post){
+      post.tags = post.tags.map(function(tag) { return tag.description });
+      return post;
+    }
+
     window.scrollTo(0, 0);
+  }
+
+  filter(form) {
+    var dateFront = this.filters['dateFront'];
+
+    if(dateFront && dateFront['year'])
+      this.filters['date'] = `${dateFront['year']}/${dateFront['month']}/${dateFront['day']}`;
+
+    this.postsService.getPosts("1",this.filters).subscribe(
+      data => {
+        this.data = formatPosts(data['data'])
+      }
+    );
+
+    function formatPosts(posts){
+      posts.map(function(post){
+        return formatTags(post);
+      })
+      
+      return posts;
+    }
+
+    function formatTags(post){
+      post.tags = post.tags.map(function(tag) { return tag.description });
+      return post;
+    } 
   }
 }

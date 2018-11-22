@@ -16,6 +16,10 @@
   "layout.delete"          : "Borrar",
   "layout.save"            : "Guardar",
   "layout.clear"           : "Limpiar campos",
+  "layout.selectASocialRed": "Seleccione una red social",
+  "layout.selectASiteType" : "Seleccione un tipo de sitio",
+  "layout.datepicker"      : "dd-mm-yyyy",
+  "layout.filter"          : "Filtrar",
 
   "errors.tpyAndUrlNotUnique" : "El tipo y la url no pueden estar repetidos",
 
@@ -39,6 +43,10 @@
   "posts.site"         : "Sitio",
   "posts.creationDate" : "Fecha de creación",
   "posts.tags"         : "Tags",
+  "posts.forTags"      : "Por tags",
+  "posts.forMedia"     : "Por Medio",
+  "posts.forType"      : "Por sitio",
+  "posts.forDate"      : "Por Fecha",
 
   "sites.url"      : "Url",
   "sites.type"     : "Tipo",
@@ -49,7 +57,5 @@
   "media.addMedia" : "Agregar medio",
   "media.name"     : "Nombre",
   "media.district" : "Distrito",
-  "media.edit"     : "Editar medio",
-
-  "layout.selectASocialRed": "Seleccione una red social"
+  "media.edit"     : "Editar medio"
 }
