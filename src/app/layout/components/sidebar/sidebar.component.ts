@@ -71,6 +71,7 @@ export class SidebarComponent {
 
     changeLang(language: string) {
         this.translate.use(language);
+        localStorage.setItem('language', language);
     }
 
     onLoggedout() {

@@ -2,14 +2,15 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MediaComponent } from './media.component';
 import { TableModule } from 'ngx-easy-table';
-import { MediaResolve } from '../../shared/resolves';
+import { MediaResolve,TranslationsResolve } from '../../shared/resolves';
 
 const routes: Routes = [
     {
         path: '', 
         component: MediaComponent, 
         resolve: { 
-            mediaResolve : MediaResolve 
+            mediaResolve : MediaResolve,
+            translations: TranslationsResolve
         }
     }
 ];
@@ -21,7 +22,8 @@ const routes: Routes = [
         TableModule
     ],
     providers: [
-        MediaResolve
+        MediaResolve,
+        TranslationsResolve
     ]
 })
 export class MediaRoutingModule {

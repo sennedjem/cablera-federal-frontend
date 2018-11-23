@@ -48,14 +48,20 @@
   "posts.forType"      : "Por sitio",
   "posts.forDate"      : "Por Fecha",
 
-  "sites.url"      : "Url",
-  "sites.type"     : "Tipo",
-  "sites.addSite"  : "Agregar sitio",
-  "sites.edit"     : "Editar sitio",
-  "sites.media_id" : "Medio",  
+  "sites.type"                  : "Tipo",
+  "sites.url"                   : "Url",
+  "sites.creationDate"          : "Fecha de creación",
+  "sites.addSite"               : "Agregar sitio",
+  "sites.edit"                  : "Editar sitio",
+  "sites.media_id"              : "Medio",
+  "sites.filterByName"          : "Filtrar por nombre",
+  "sites.filterByUrl"           : "Filtrar por url",
+  "sites.filterByCreationDate"  : "Filtrar por fecha de creación",
 
-  "media.addMedia" : "Agregar medio",
-  "media.name"     : "Nombre",
-  "media.district" : "Distrito",
-  "media.edit"     : "Editar medio"
+  "media.addMedia"          : "Agregar medio",
+  "media.name"              : "Nombre",
+  "media.district"          : "Distrito",
+  "media.edit"              : "Editar medio",
+  "media.filterByName"      : "Filtrar por nombre",
+  "media.filterByDistrict"  : "Filtrar por districto"
 }

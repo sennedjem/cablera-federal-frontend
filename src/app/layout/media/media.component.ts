@@ -18,18 +18,31 @@ export class MediaComponent implements OnInit {
     data;
     columns;
 
+    translations;
+
     constructor(
         private route: ActivatedRoute,
         private mediaService: MediaService
     ) {}
 
     ngOnInit() {
-        this.route.data.subscribe((media) => this.data = media.mediaResolve.data);
+        this.route.data.subscribe((data) => {
+            this.data = data.mediaResolve.data,
+            this.translations = data.translations
+        });
 
         /* Para la tabla */
         this.columns = [
-            { key: 'name', title: 'Name', placeholder: 'Filtrar por nombre'},
-            { key: 'district', title: 'District', placeholder: 'Filtrar por distrito' }
+            { 
+                key: 'name', 
+                title: this.translations['media.name'],
+                placeholder: this.translations['media.filterByName']
+            },
+            { 
+                key: 'district', 
+                title: this.translations['media.district'], 
+                placeholder: this.translations['media.filterByDistrict']
+            }
         ];
         
         this.configuration = ConfigService.config;

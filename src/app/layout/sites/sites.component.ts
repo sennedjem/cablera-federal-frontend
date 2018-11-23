@@ -18,19 +18,36 @@ export class SitesComponent implements OnInit {
     data;
     columns;
 
+    translations
+
     constructor(
         private route: ActivatedRoute,
         private sitesService: SitesService
     ) {}
 
     ngOnInit() {
-        this.route.data.subscribe((sites) => this.data = sites.sitesResolve.data);
+        this.route.data.subscribe((data) => {
+            this.data = data.sitesResolve.data,
+            this.translations = data.translations
+        });
 
         /* Para la tabla */
         this.columns = [
-            { key: 'type', title: 'Tipo', placeholder: 'Filtrar por tipo'},
-            { key: 'url', title: 'Url', placeholder: 'Filtrar por url' },
-            { key: 'created_at', title: 'Creado en', placeholder: 'Creado en...' }
+            { 
+                key: 'type', 
+                title: this.translations['sites.type'], 
+                placeholder: this.translations['sites.filterByType']
+            },
+            { 
+                key: 'url', 
+                title: this.translations['sites.url'], 
+                placeholder: this.translations['sites.filterByUrl']
+            },
+            { 
+                key: 'created_at', 
+                title: this.translations['sites.creationDate'], 
+                placeholder: this.translations['sites.filterByCreationDate'] 
+            }
         ];
         
         this.configuration = ConfigService.config;
