@@ -64,14 +64,17 @@ export class PostsComponent implements OnInit {
   pageChange(newPage){
     this.page = newPage
     
-    console.log(this.filters)
     this.route.navigate([], {
       queryParams: {
         page: newPage
       }
     });
 
-    this.filter(null);
+    this.postsService.getPosts("" + newPage,this.filters).subscribe(
+      data => {
+        this.data = formatPosts(data['data'])
+      }
+    );
 
     function formatPosts(posts){
       posts.map(function(post){
