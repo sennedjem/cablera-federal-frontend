@@ -64,17 +64,14 @@ export class PostsComponent implements OnInit {
   pageChange(newPage){
     this.page = newPage
     
+    console.log(this.filters)
     this.route.navigate([], {
       queryParams: {
         page: newPage
       }
     });
 
-    this.postsService.getPosts("" + this.page).subscribe(
-      data => {
-        this.data = formatPosts(data['data'])
-      }
-    );
+    this.filter(null);
 
     function formatPosts(posts){
       posts.map(function(post){
@@ -100,7 +97,7 @@ export class PostsComponent implements OnInit {
     if(dateFront && dateFront['year'])
       this.filters['creation_date'] = `${dateFront['year']}-${dateFront['month']}-${dateFront['day']}`;
 
-    this.postsService.getPosts("1",this.filters).subscribe(
+    this.postsService.getPosts((""+this.page),this.filters).subscribe(
       data => {
         this.data = formatPosts(data['data'])
       }
