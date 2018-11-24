@@ -19,10 +19,10 @@ export class PostsComponent implements OnInit {
   page: number;
   
   filters = {
-    media_id: String,
-    creation_date: String,
-    site_type: String,
-    tags: []
+    "media_id" :"",
+    "creation_date" :undefined,
+    "site_type" : "",
+    "tags" : []
   };
   types;
   medias: [Media];
@@ -93,10 +93,12 @@ export class PostsComponent implements OnInit {
   }
 
   filter(form) {
-    var dateFront = this.filters['dateFront'];
+    var dateFront = this.filters['creation_date'];
+
+    console.log(this.filters)
 
     if(dateFront && dateFront['year'])
-      this.filters['date'] = `${dateFront['year']}/${dateFront['month']}/${dateFront['day']}`;
+      this.filters['creation_date'] = `${dateFront['year']}-${dateFront['month']}-${dateFront['day']}`;
 
     this.postsService.getPosts("1",this.filters).subscribe(
       data => {

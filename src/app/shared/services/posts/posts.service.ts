@@ -26,8 +26,8 @@ export class PostsService extends GenericService<Post>{
     if(Object.keys(filters)){
       if(filters['tags']) params+=this.formatTags(params,filters['tags']);
       if(filters['media_id']) params+=`&media_id=${filters['media_id']}`;
-      if(filters['type']) params+=`&type=${filters['type']}`;
-      if(filters['date']) params+=`&date=${filters['date']}`;
+      if(filters['site_type']) params+=`&site_type=${filters['site_type']}`;
+      if(filters['creation_date']) params+=`&creation_date=${filters['creation_date']}`;
     }
 
     return params;
