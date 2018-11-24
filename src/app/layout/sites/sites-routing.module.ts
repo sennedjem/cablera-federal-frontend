@@ -2,14 +2,15 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SitesComponent } from './sites.component';
 import { TableModule } from 'ngx-easy-table';
-import { SitesResolve } from '../../shared/resolves';
+import { SitesResolve,TranslationsResolve } from '../../shared/resolves';
 
 const routes: Routes = [
     {
         path: '', 
         component: SitesComponent, 
         resolve: { 
-            sitesResolve : SitesResolve 
+            sitesResolve : SitesResolve,
+            translations: TranslationsResolve
         }
     }
 ];
@@ -21,7 +22,8 @@ const routes: Routes = [
         TableModule
     ],
     providers: [
-        SitesResolve
+        SitesResolve,
+        TranslationsResolve
     ]
 })
 export class SitesRoutingModule {

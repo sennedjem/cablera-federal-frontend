@@ -1,5 +1,5 @@
 {
-  "dashboard.text"         : "Bienvenidos a cablera federal, aquí podrá encontrar sus fuentes centralizadas",
+  "dashboard.text"         : "Welcome to federal cable, here you can find your centralized sources",
 
   "layout.dashboard"       : "Dashboard",
   "layout.forms"           : "Form",
@@ -48,14 +48,20 @@
   "posts.forType"      : "For type",
   "posts.forDate"      : "For date",
 
-  "sites.url"      : "Url",
-  "sites.type"     : "Type",
-  "sites.addSite"  : "Add site",
-  "sites.edit"     : "Edit site",
-  "sites.media_id" : "Media",
+  "sites.url"                   : "Url",
+  "sites.type"                  : "Type",
+  "sites.creationDate"          : "Creation date",
+  "sites.addSite"               : "Add site",
+  "sites.edit"                  : "Edit site",
+  "sites.media_id"              : "Media",
+  "sites.filterByName"          : "Filter by name",
+  "sites.filterByUrl"           : "Filter by url",
+  "sites.filterByCreationDate"  : "Filter by creation date",
 
-  "media.addMedia" : "Add media",
-  "media.name"     : "Name",
-  "media.district" : "District",  
-  "media.edit"     : "Edit media"
+  "media.addMedia"          : "Add media",
+  "media.name"              : "Name",
+  "media.district"          : "District",  
+  "media.edit"              : "Edit media",
+  "media.filterByName"      : "Filter by name",
+  "media.filterByDistrict"  : "Filter by district"
 }
