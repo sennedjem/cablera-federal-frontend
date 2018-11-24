@@ -93,12 +93,7 @@ export class PostsComponent implements OnInit {
   }
 
   filter(form) {
-    var dateFront = this.filters['creation_date'];
-
     console.log(this.filters)
-
-    if(dateFront && dateFront['year'])
-      this.filters['creation_date'] = `${dateFront['year']}-${dateFront['month']}-${dateFront['day']}`;
 
     this.postsService.getPosts((""+this.page),this.filters).subscribe(
       data => {

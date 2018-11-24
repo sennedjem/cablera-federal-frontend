@@ -27,7 +27,7 @@ export class PostsService extends GenericService<Post>{
       if(filters['tags']) params+=this.formatTags(params,filters['tags']);
       if(filters['media_id']) params+=`&media_id=${filters['media_id']}`;
       if(filters['site_type']) params+=`&site_type=${filters['site_type']}`;
-      if(filters['creation_date']) params+=`&creation_date=${filters['creation_date']}`;
+      if(filters['creation_date']) params+=this.formatDate(params,filters['creation_date']);
     }
 
     return params;
@@ -35,5 +35,9 @@ export class PostsService extends GenericService<Post>{
 
   formatTags(params: string, variables: [string]){
     return `${params}&tags=${variables.map(function(tag){ return tag['value'] }).join(',')}`;
+  }
+
+  formatDate(params: string, date: [string]){
+    return `${params}&creation_date=${date['year']}-${date['month']}-${date['day']}`;
   }
 }
