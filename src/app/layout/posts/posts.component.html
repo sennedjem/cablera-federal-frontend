@@ -33,7 +33,7 @@
                 <label class="col-md-12" for="type" translate="posts.forType"></label>
                 <select class="form-control col-md-12" 
                         id="type" name="type" 
-                        [(ngModel)]="filters.type"
+                        [(ngModel)]="filters.site_type"
                         #type="ngModel">
                     <option disabled selected translate="layout.selectASiteType"></option>
                     <option *ngFor="let type of types" [ngValue]="type">{{type}}</option>
@@ -47,7 +47,7 @@
                             placeholder="yyyy-mm-dd"
                             name="date" id="date" 
                             (click)="d.toggle()" 
-                            [(ngModel)]="filters.dateFront" 
+                            [(ngModel)]="filters.creation_date" 
                             ngbDatepicker
                             #d="ngbDatepicker">
 
