@@ -18,7 +18,12 @@ export class PostsComponent implements OnInit {
   perPage: number;
   page: number;
   
-  filters = {};
+  filters = {
+    media_id: String,
+    creation_date: String,
+    site_type: String,
+    tags: []
+  };
   types;
   medias: [Media];
 
