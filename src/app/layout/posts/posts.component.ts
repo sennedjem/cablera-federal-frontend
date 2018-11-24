@@ -99,7 +99,9 @@ export class PostsComponent implements OnInit {
 
     this.postsService.getPosts((""+this.page),this.filters).subscribe(
       data => {
-        this.data = formatPosts(data['data'])
+        this.data = formatPosts(data['data']),
+        this.count = data['total'],
+        this.page = 1
       }
     );
 
