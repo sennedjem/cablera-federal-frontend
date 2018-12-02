@@ -18,7 +18,10 @@ export class LoginComponent implements OnInit {
     failLogin: boolean = false;
     message: String;
 
-    constructor(public router: Router, public auth: AuthService) {}
+    constructor(
+        public router: Router, 
+        public auth: AuthService
+    ) {}
 
     ngOnInit() {}
 
@@ -30,13 +33,12 @@ export class LoginComponent implements OnInit {
     }
 
     setUserAndNavigate(user:string) {
-        localStorage.setItem('user', JSON.stringify(user));
+        this.auth.login(user);
         this.router.navigate(['/dashboard']);
     }
 
     setFailLogin(response){
         this.failLogin = true;
         this.message = response.error.message;
-        console.log(response);
     }
 }

@@ -10,7 +10,10 @@ export class TranslationsResolve implements Resolve<Observable<Object>>{
 	constructor(private translate: TranslateService){}
 
 	resolve(route: ActivatedRouteSnapshot): Observable<Object>{
-        switch (localStorage.getItem('language')){
+        var language = localStorage.getItem('language');
+        var currentLanguage = language? language: 'en'
+
+        switch (currentLanguage){
             case 'es':
                 return this.translate.getTranslation('es');
             case 'en':

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { AuthService } from '../../../shared/services';
 
 @Component({
     selector: 'app-header',
@@ -11,7 +12,11 @@ export class HeaderComponent implements OnInit {
     pushRightClass: string = 'push-right';
     loggedUser;
 
-    constructor(private translate: TranslateService, public router: Router) {
+    constructor(
+        private translate: TranslateService, 
+        public router: Router,
+        private auth: AuthService
+    ) {
 
         this.translate.addLangs(['en', 'es']);
         this.translate.setDefaultLang('en');
@@ -49,7 +54,7 @@ export class HeaderComponent implements OnInit {
     }
 
     onLoggedout() {
-        localStorage.removeItem('user');
+        this.auth.logout();
     }
 
     changeLang(language: string) {
