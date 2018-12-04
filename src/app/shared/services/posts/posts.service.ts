@@ -38,6 +38,14 @@ export class PostsService extends GenericService<Post>{
   }
 
   formatDate(params: string, date: [string]){
-    return `${params}&creation_date=${date['year']}-${date['month']}-${date['day']}`;
+    var day = date['day'];
+    if(day<10){
+      day = '0' + day;
+    }
+    var month = date['month'];
+    if(month<10){
+      month = '0' + month;
+    }
+    return `${params}&creation_date=${date['year']}-${month}-${day}`;
   }
 }
