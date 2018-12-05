@@ -50,7 +50,7 @@ export class MediaComponent implements OnInit {
 
     delete(id){
         this.mediaService.delete(id).subscribe(
-            (data) => alert('Se eliminado el medio exitosamente'),
+            (data) => console.log('Se eliminado el medio exitosamente'),
             error => console.log(error)
         );
         

@@ -55,7 +55,7 @@ export class SitesComponent implements OnInit {
 
     delete(id){
         this.sitesService.delete(id).subscribe(
-            (data) => alert('Se eliminado el sitio exitosamente'),
+            (data) => console.log('Se eliminado el sitio exitosamente'),
             error => console.log(error)
         );
         
