@@ -47,6 +47,7 @@
   "posts.forMedia"     : "For Media",
   "posts.forType"      : "For type",
   "posts.forDate"      : "For date",
+  "posts.cleanFilters" : "Clean Filters",
 
   "sites.url"                   : "Url",
   "sites.type"                  : "Type",

@@ -47,6 +47,7 @@
   "posts.forMedia"     : "Por Medio",
   "posts.forType"      : "Por sitio",
   "posts.forDate"      : "Por Fecha",
+  "posts.cleanFilters" : "Limpiar Filtros",
 
   "sites.type"                  : "Tipo",
   "sites.url"                   : "Url",

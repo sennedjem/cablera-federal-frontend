@@ -52,6 +52,7 @@ export class PostsComponent implements OnInit {
     });
 
     function formatPost(post){
+      post.creation_date = post.creation_date + ' 00:00:00'
       post.tags = post.tags.map(function(tag) {return tag.description});
       return post
     }
@@ -59,6 +60,15 @@ export class PostsComponent implements OnInit {
 
   formatContent(content){
     return content + '...';
+  }
+
+  cleanFilters(){
+    this.filters = {
+      "media_id" :"",
+      "creation_date" :undefined,
+      "site_type" : "",
+      "tags" : []
+    };
   }
 
   pageChange(newPage){
@@ -78,7 +88,9 @@ export class PostsComponent implements OnInit {
 
     function formatPosts(posts){
       posts.map(function(post){
-        return formatTags(post);
+        post.creation_date = post.creation_date + ' 00:00:00'
+        post.tags = post.tags.map(function(tag) { return tag.description });
+        return post;
       })
       
       return posts;
@@ -105,7 +117,9 @@ export class PostsComponent implements OnInit {
 
     function formatPosts(posts){
       posts.map(function(post){
-        return formatTags(post);
+        post.creation_date = post.creation_date + ' 00:00:00'
+        post.tags = post.tags.map(function(tag) { return tag.description });
+        return post;
       })
       
       return posts;

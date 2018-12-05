@@ -60,13 +60,22 @@
                     </div>
                 </div>
             </div>
+
             
         </div>
         <div class="row m-2">
             <div class="col-md text-center">
                 <button type="submit" class="btn btn-primary" translate="layout.filter"></button>
-            </div>
+                <button class="btn btn-danger" 
+                                style="margin-left: 10px" 
+                                (click)="cleanFilters()" 
+                                type="button" >
+                                {{ 'posts.cleanFilters' | translate }}
+                            <i class="fa fa-times"></i>
+                </button>
+            </div> 
         </div>
+
     </form>
 
     <div class="row">
