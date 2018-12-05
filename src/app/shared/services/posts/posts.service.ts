@@ -15,6 +15,25 @@ export class PostsService extends GenericService<Post>{
     super(http,"posts");
   }
 
+  public updateFavouriteStatus(esId: string, favourite: boolean){
+    const user = JSON.parse(localStorage.getItem('user'));
+    if(favourite){
+      return this.http.post<T>(`${this.url}/favs-posts`, {"post_es_id":esId,"user_id":user.id}, {headers: this.headers});
+    } else {
+      return this.http.delete<String>(`${this.url}/favs-posts/${esId}`, {headers: this.headers});
+    }
+  }
+
+  public getFavsPosts(): Observable<Object []> {
+    const user = JSON.parse(localStorage.getItem('user'));
+    return this.http.get<Object[]>(`${this.url}/favs-posts/${user.id}`, {headers: this.headers});
+  }
+
+  public getFavsPostsExtended(): Observable<Object []> {
+    const user = JSON.parse(localStorage.getItem('user'));
+    return this.http.get<Object[]>(`${this.url}/favourite-posts-extended/${user.id}`, {headers: this.headers});
+  }
+
   public getPosts(page: string = null, filters = {}): Observable<Post[]> {
     return this.http
       .get<Post[]>(`${this.url}/${this.endpoint}?per_page=12` + (page? `&page=${page}`:'') + this.filtersParams(filters), {headers: this.headers});

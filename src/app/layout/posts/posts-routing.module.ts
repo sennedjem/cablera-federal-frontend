@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PostsComponent } from './posts.component';
 import { TableModule } from 'ngx-easy-table';
-import { MediaResolve, PostsGetAllResolver, TypesResolve } from '../../shared';
+import { PostsGetFavsResolve } from '../../shared/resolves/posts-get-favs-resolve';
+import { MediaResolve, PostsGetAllResolver, TypesResolve} from '../../shared';
 
 const routes: Routes = [
     {
@@ -11,7 +12,8 @@ const routes: Routes = [
         resolve: {
             posts : PostsGetAllResolver,
             types : TypesResolve,
-            medias : MediaResolve
+            medias : MediaResolve,
+            favs : PostsGetFavsResolve
         }
     }
 ];
@@ -24,6 +26,7 @@ const routes: Routes = [
     ],
     providers: [
         PostsGetAllResolver,
+        PostsGetFavsResolve,
         TypesResolve,
         MediaResolve
     ]

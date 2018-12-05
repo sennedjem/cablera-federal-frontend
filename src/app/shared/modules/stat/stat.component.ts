@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DateService } from '../../services';
+import { PostsService } from '../../services/posts/posts.service'
 
 @Component({
     selector: 'app-stat',
@@ -16,8 +17,10 @@ export class StatComponent implements OnInit {
     @Input() tags: Array<string>;
     @Input() publicationDate;
     @Input() site: string;
+    @Input() favourite: boolean;
+    @Input() esId: string;
 
-    constructor(private dateService: DateService) {}
+    constructor(private dateService: DateService, private postsService: PostsService) {}
 
     ngOnInit() {}
 
@@ -27,6 +30,23 @@ export class StatComponent implements OnInit {
 
     getPublishDate(){
         return this.dateService.formatDate(this.publicationDate,'dd/MM/yyyy, HH:mm');
+    }
+
+    getStarColor(){
+        if(this.favourite){
+            return "yellow"
+        } else {
+            return "grey" 
+        }
+    }
+
+    changeStatus(){
+        this.postsService.updateFavouriteStatus(this.esId,!this.favourite).subscribe((data) => {
+            this.favourite = !this.favourite
+            console.log(this);
+        },(err) => {
+            console.log('error');
+        })
     }
 
     hasImage(){

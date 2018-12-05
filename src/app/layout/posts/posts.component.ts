@@ -17,6 +17,7 @@ export class PostsComponent implements OnInit {
   count: number;
   perPage: number;
   page: number;
+  favs: Object[];
   
   filters = {
     "media_id" :"",
@@ -42,16 +43,22 @@ export class PostsComponent implements OnInit {
       this.count = data.posts.total,
       this.perPage = data.posts.per_page,
       this.page = data.posts.current_page,
+      this.favs = data.favs.map(function(fav){
+        return fav.post_es_id;
+      })
 
       this.types = data.types,
       this.medias = data.medias.data;
     });
 
     this.data.map(function(post) {
-      return formatPost(post)
-    });
+      return formatPost(post,this.favs)
+    },this);
 
-    function formatPost(post){
+    console.log(this.data)
+
+    function formatPost(post,favs){
+      post.favourite = favs.includes(post._id)
       post.creation_date = post.creation_date + ' 00:00:00'
       post.tags = post.tags.map(function(tag) {return tag.description});
       return post

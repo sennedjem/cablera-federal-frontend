@@ -5,4 +5,5 @@ export class Post {
     public creation_date: string;
     public id: number;
     public tags: any[];
+    public favourite: boolean;
 }

@@ -25,6 +25,7 @@
         </tag-input>
 
         <div class="float-right">
+            <span ><i style="margin-right: 10px" class="fa fa-star fa-2x" (click)="changeStatus()" [ngStyle]="{'color':getStarColor()}" ></i></span>
             <a routerLink="/posts/{{id}}" >
                 <span ><i class="fa fa-edit fa-2x"></i></span>
             </a>
